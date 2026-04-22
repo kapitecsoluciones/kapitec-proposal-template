@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>OG · __PROPOSAL_TITLE__</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@500;600&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet"/>
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 1200px;
+    height: 630px;
+    background: #070E1D;
+    color: #F1F5F9;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  /* ambient gradient glow */
+  .glow {
+    position: absolute;
+    width: 1100px;
+    height: 1100px;
+    left: -300px;
+    top: -300px;
+    background: radial-gradient(circle at center, rgba(35,103,251,0.35), rgba(45,210,161,0.08) 40%, transparent 70%);
+    filter: blur(40px);
+    pointer-events: none;
+  }
+  .grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .frame {
+    position: relative;
+    z-index: 1;
+    width: 1200px;
+    height: 630px;
+    padding: 48px 64px 44px 64px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+  .frame > header { flex: 0 0 auto; }
+  .frame > .headline-block { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; min-height: 0; }
+  .frame > footer { flex: 0 0 auto; }
+  header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  header img { height: 44px; width: auto; display: block; }
+  .badge {
+    padding: 8px 16px;
+    border-radius: 9999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #F59E0B;
+    background: rgba(245,158,11,0.1);
+    border: 1px solid rgba(245,158,11,0.25);
+  }
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6F7E95;
+    margin-bottom: 16px;
+  }
+  .headline-block { align-self: center; }
+  h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #F1F5F9;
+    margin: 0;
+    max-width: 1000px;
+  }
+  h1 .accent {
+    background: linear-gradient(135deg, #2367FB 0%, #2DD2A1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .client {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #B0BEC5;
+    margin-top: 20px;
+  }
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #2367FB 0%, #2DD2A1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .contact {
+    text-align: right;
+    font-family: 'Inter', sans-serif;
+  }
+  .contact .name { font-size: 16px; font-weight: 600; color: #F1F5F9; margin-bottom: 4px; }
+  .contact .phone {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: #6F7E95;
+  }
+  .stripe {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: linear-gradient(180deg, #2367FB 0%, #2DD2A1 100%);
+  }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="grid-lines"></div>
+  <div class="stripe"></div>
+  <div class="frame">
+    <header>
+      <img src="assets/kapi-logo.svg" alt="Kapi"/>
+      <span class="badge">__INDUSTRY_BADGE__</span>
+    </header>
+    <div class="headline-block">
+      <div class="eyebrow">Prepared for __CLIENT_NAME__ · __CLIENT_LOCATION__</div>
+      <h1>__PROPOSAL_TITLE__.</h1>
+      <div class="client">A Kapitec strategic proposal.</div>
+    </div>
+    <footer>
+      <div class="url">kapitec.pro/__PROPOSAL_SLUG__</div>
+      <div class="contact">
+        <div class="name">Javier Enríquez · Kapitec Soluciones</div>
+        <div class="phone">+52 662 105 0329 · info@kapitec.pro</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

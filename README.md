@@ -14,7 +14,7 @@ Both share the same Stitch (claude.ai/design) design system asset — see `STITC
 ## Hard rules (non-negotiable, for every Kapitec proposal)
 
 1. **No prices** in the v1 client-facing output. Pricing is added later in a v2 after the client validates scope.
-2. **Durations in days or hours only.** No "Month 1" / "Week 3" / "Q2". AI-accelerated delivery is part of the Kapitec brand promise.
+2. **Roadmap durations are commercial, not engineering time.** Phases are labeled in **months** (typically Month 1 / Month 2 / Month 3 for a three-month end-to-end engagement). AI-accelerated engineering compresses the *build* itself to days — the commercial window includes client-side onboarding, regulatory validation, pilot ramp-up, and operational calm-down. Never quote the raw build time in days to the client.
 3. **No emojis.** Material Symbols Outlined (filled variant) or lucide icons at 20–24px with 1.5px stroke.
 4. **Dark theme default**, matching kapitec.pro: canvas `#070E1D`, surface tiers `#0A1428` → `#233D66`, ghost borders `rgba(255,255,255,0.06)`.
 5. **Kapitec signature gradient** `linear-gradient(135deg, #2367FB 0%, #2DD2A1 100%)` used sparingly — hero one-word accent, primary CTA, roadmap phase numbers, credentials "Live" links. Nowhere else.
@@ -25,6 +25,7 @@ Both share the same Stitch (claude.ai/design) design system asset — see `STITC
 10. **Typography**: Plus Jakarta Sans 800 (H1 80px, H2 48px, -0.02em tracking), Inter 400/500 (body 17px, 1.65 line-height), JetBrains Mono 700 (stats, durations, weights).
 11. **Logo**: real Kapi wordmark SVG (`template/assets/kapi-logo.svg`) in nav + footer — never render `kapi.` as text.
 12. **Primary CTA = WhatsApp to Javi** (+52 662 105 0329). Hero uses the WhatsApp-green brand glyph, a gradient-filled button, and the direct wa.me link with a pre-filled message. A green WhatsApp floating-action-button sits bottom-right on every screen so the CTA is reachable from any scroll position.
+13. **Open Graph image** (`site/assets/og.png`, 1200×630 PNG) is mandatory. Every Kapitec proposal URL gets pasted into WhatsApp, email, Slack, etc. — a blank unfurl looks unprofessional. The template ships `template/og.html` which the bootstrap script renders to PNG via headless Chrome; the PNG shows the Kapi logo, industry badge, proposal title, client name, and Javier's contact line on the Kapitec gradient backdrop.
 
 ## Structure of this repo
 
@@ -32,6 +33,7 @@ Both share the same Stitch (claude.ai/design) design system asset — see `STITC
 kapitec-proposal-template/
 ├── template/
 │   ├── index.html          ← the skeleton with __PLACEHOLDER__ markers
+│   ├── og.html             ← Open Graph image template (1200×630) — rendered to site/assets/og.png
 │   └── assets/
 │       └── kapi-logo.svg   ← official Kapi wordmark (from /workspace/brand/)
 ├── examples/

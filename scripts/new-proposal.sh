@@ -40,8 +40,10 @@ if [ -e "$OUT_DIR" ]; then
     exit 1
 fi
 
-mkdir -p "$OUT_DIR/site/mockups"
+mkdir -p "$OUT_DIR/site/mockups" "$OUT_DIR/site/assets"
 cp "$TEMPLATE_ROOT/template/index.html" "$OUT_DIR/site/index.html"
+cp "$TEMPLATE_ROOT/template/og.html"    "$OUT_DIR/site/og.html"
+cp "$TEMPLATE_ROOT/template/assets/kapi-logo.svg" "$OUT_DIR/site/assets/kapi-logo.svg"
 
 # Helper: url-encode
 urlencode() {
@@ -52,11 +54,9 @@ WA_BODY_ENCODED=$(urlencode "Hola Javi, vi la propuesta de ${PROPOSAL_TITLE} y m
 EMAIL_SUBJECT_ENCODED=$(urlencode "${PROPOSAL_TITLE} — ${CLIENT_NAME}")
 META_DESCRIPTION="Kapitec strategic proposal — ${PROPOSAL_TITLE}. Prepared for ${CLIENT_NAME}, ${CLIENT_LOCATION}."
 
-# Substitute placeholders. Use a delimiter unlikely to appear in values.
-python3 - "$OUT_DIR/site/index.html" <<PYEOF
+# Substitute placeholders in both index.html and og.html.
+python3 - "$OUT_DIR/site/index.html" "$OUT_DIR/site/og.html" <<PYEOF
 import sys, pathlib
-p = pathlib.Path(sys.argv[1])
-text = p.read_text()
 mapping = {
     "__CLIENT_NAME__": """${CLIENT_NAME}""",
     "__CLIENT_LOCATION__": """${CLIENT_LOCATION}""",
@@ -70,11 +70,46 @@ mapping = {
     "#F59E0B": """${INDUSTRY_HEX}""",
     "245,158,11": """${INDUSTRY_RGB}""",
 }
-for k, v in mapping.items():
-    text = text.replace(k, v)
-p.write_text(text)
-print(f"wrote {p} ({len(text)} bytes)")
+for argv in sys.argv[1:]:
+    p = pathlib.Path(argv)
+    text = p.read_text()
+    for k, v in mapping.items():
+        text = text.replace(k, v)
+    p.write_text(text)
+    print(f"wrote {p} ({len(text)} bytes)")
 PYEOF
+
+# Render og.png from og.html (1200x630). Try playwright CLI, then fall back to headless Chrome.
+OG_HTML="$OUT_DIR/site/og.html"
+OG_PNG="$OUT_DIR/site/assets/og.png"
+echo ""
+echo "→ rendering og.png (1200x630) from og.html"
+
+render_ok=0
+if command -v npx >/dev/null 2>&1; then
+    # Try node + playwright
+    if npx --yes playwright --version >/dev/null 2>&1; then
+        npx --yes playwright chromium --headless=true "file://$OG_HTML" --screenshot="$OG_PNG" --viewport-size=1200,630 2>/dev/null && render_ok=1 || true
+    fi
+fi
+
+if [ "$render_ok" = "0" ]; then
+    # macOS
+    if [ -x "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" ]; then
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --disable-gpu --no-sandbox --hide-scrollbars --window-size=1200,630 --force-device-scale-factor=1 --virtual-time-budget=3000 --screenshot="$OG_PNG" "file://$OG_HTML" 2>/dev/null && render_ok=1 || true
+    # Linux (google-chrome / chromium)
+    elif command -v google-chrome >/dev/null 2>&1; then
+        google-chrome --headless=new --disable-gpu --no-sandbox --hide-scrollbars --window-size=1200,630 --force-device-scale-factor=1 --virtual-time-budget=3000 --screenshot="$OG_PNG" "file://$OG_HTML" 2>/dev/null && render_ok=1 || true
+    elif command -v chromium >/dev/null 2>&1; then
+        chromium --headless=new --disable-gpu --no-sandbox --hide-scrollbars --window-size=1200,630 --force-device-scale-factor=1 --virtual-time-budget=3000 --screenshot="$OG_PNG" "file://$OG_HTML" 2>/dev/null && render_ok=1 || true
+    fi
+fi
+
+if [ "$render_ok" = "1" ] && [ -f "$OG_PNG" ]; then
+    echo "  ✓ og.png → $OG_PNG ($(wc -c < "$OG_PNG") bytes)"
+else
+    echo "  ⚠ could not auto-render og.png — open $OG_HTML in a browser, screenshot 1200×630, save as $OG_PNG"
+fi
 
 cat > "$OUT_DIR/README.md" <<EOM
 # ${PROPOSAL_TITLE}
