@@ -119,10 +119,15 @@
         }
 
         .btn-gradient {
-            background: linear-gradient(135deg, #2367FB 0%, #2DD2A1 100%);
+            background: linear-gradient(135deg, #2367FB 0%, #2DD2A1 50%, #2367FB 100%);
+            background-size: 200% 200%;
+            animation: gradientFlow 8s ease-in-out infinite;
             transition: filter 200ms ease-out;
         }
-        
+        @keyframes gradientFlow {
+            0%, 100% { background-position: 0% 50%; }
+            50%      { background-position: 100% 50%; }
+        }
         .btn-gradient:hover {
             filter: brightness(1.1);
         }
@@ -212,6 +217,59 @@
         /* Kapi logo sizing helper */
         .kapi-logo { height: 32px; width: auto; display: inline-block; }
         .kapi-logo-sm { height: 24px; width: auto; display: inline-block; }
+
+        /* -------- POLISH ANIMATIONS (Level 1 + 2) -------- */
+
+        /* Scroll reveal — JS toggles .in-view when element enters viewport */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 600ms ease-out, transform 600ms ease-out; will-change: opacity, transform; }
+        .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+        /* Card hover lift — auto-applied to rounded surface cards */
+        [class*="bg-surface_container_lowest"][class*="rounded-"]:not(.no-lift),
+        [class*="bg-surface_container"][class*="rounded-2xl"]:not(.no-lift),
+        [class*="border-gradient-kapitec"]:not(.no-lift) {
+            transition: transform 240ms ease-out, box-shadow 240ms ease-out, background-color 240ms ease-out;
+        }
+        [class*="bg-surface_container_lowest"][class*="rounded-"]:not(.no-lift):hover,
+        [class*="bg-surface_container"][class*="rounded-2xl"]:not(.no-lift):hover,
+        [class*="border-gradient-kapitec"]:not(.no-lift):hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 48px -14px rgba(45, 210, 161, 0.20), 0 0 0 1px rgba(45, 210, 161, 0.08) inset;
+        }
+
+        /* Hero background glow — slow drift */
+        .glow-drift { animation: glowDrift 14s ease-in-out infinite; }
+        @keyframes glowDrift {
+            0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.22; }
+            50%      { transform: scale(1.18) translate(-3%, 2%); opacity: 0.32; }
+        }
+
+        /* Architecture timeline — sequential disc reveal */
+        .timeline-row .timeline-node { opacity: 0; transform: translateY(12px) scale(0.92); transition: opacity 500ms ease-out, transform 500ms ease-out; }
+        .timeline-row.in-view .timeline-node { opacity: 1; transform: translateY(0) scale(1); }
+        .timeline-row.in-view .timeline-node:nth-child(1) { transition-delay: 0ms; }
+        .timeline-row.in-view .timeline-node:nth-child(2) { transition-delay: 80ms; }
+        .timeline-row.in-view .timeline-node:nth-child(3) { transition-delay: 160ms; }
+        .timeline-row.in-view .timeline-node:nth-child(4) { transition-delay: 240ms; }
+        .timeline-row.in-view .timeline-node:nth-child(5) { transition-delay: 320ms; }
+        .timeline-row.in-view .timeline-node:nth-child(6) { transition-delay: 400ms; }
+
+        /* Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal, .reveal.in-view,
+            .timeline-row .timeline-node, .timeline-row.in-view .timeline-node {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+            .btn-gradient, .glow-drift, .wa-fab::before { animation: none !important; }
+            [class*="bg-surface_container_lowest"]:hover,
+            [class*="bg-surface_container"]:hover,
+            [class*="border-gradient-kapitec"]:hover {
+                transform: none !important;
+                box-shadow: none !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-surface text-text-primary antialiased">
@@ -242,7 +300,7 @@
 <!-- Hero Section -->
 <section class="min-h-[921px] flex flex-col justify-center items-center relative px-6 md:px-24 max-w-[1200px] mx-auto py-24 text-center">
 <div class="absolute inset-0 z-0 flex items-center justify-center opacity-20 pointer-events-none">
-<div class="w-[600px] h-[600px] bg-primary rounded-full blur-[120px] mix-blend-screen"></div>
+<div class="w-[600px] h-[600px] bg-primary rounded-full blur-[120px] mix-blend-screen glow-drift"></div>
 </div>
 <div class="relative z-10 w-full">
 <p class="font-label text-text-muted text-xs uppercase tracking-[0.12em] mb-8">
@@ -472,43 +530,43 @@
 <!-- Desktop timeline -->
 <div class="relative py-12 hidden lg:block">
 <div class="absolute top-8 left-0 right-0 h-px border-t border-dashed border-white/20 z-0"></div>
-<div class="flex justify-between relative z-10 gap-4">
-<div class="flex flex-col items-center gap-4 group">
+<div class="flex justify-between relative z-10 gap-4 timeline-row">
+<div class="flex flex-col items-center gap-4 group timeline-node">
 <div class="w-16 h-16 rounded-full border-gradient-kapitec flex items-center justify-center font-headline font-extrabold text-xl text-white group-hover:scale-110 transition-transform duration-300">01</div>
 <div class="text-center w-32">
 <h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Carrier Signup</h4>
 <p class="text-[11px] text-text-secondary leading-snug">CDL, insurance, USDOT, W-9</p>
 </div>
 </div>
-<div class="flex flex-col items-center gap-4 group">
+<div class="flex flex-col items-center gap-4 group timeline-node">
 <div class="w-16 h-16 rounded-full border-gradient-kapitec flex items-center justify-center font-headline font-extrabold text-xl text-white group-hover:scale-110 transition-transform duration-300">02</div>
 <div class="text-center w-32">
 <h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">OCR Verification</h4>
 <p class="text-[11px] text-text-secondary leading-snug">Extract fields, flag expiring docs</p>
 </div>
 </div>
-<div class="flex flex-col items-center gap-4 group">
+<div class="flex flex-col items-center gap-4 group timeline-node">
 <div class="w-16 h-16 rounded-full border-gradient-kapitec flex items-center justify-center font-headline font-extrabold text-xl text-white group-hover:scale-110 transition-transform duration-300">03</div>
 <div class="text-center w-32">
 <h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Compliance Score</h4>
 <p class="text-[11px] text-text-secondary leading-snug">FMCSR A–F auto-rating</p>
 </div>
 </div>
-<div class="flex flex-col items-center gap-4 group">
+<div class="flex flex-col items-center gap-4 group timeline-node">
 <div class="w-16 h-16 rounded-full border-gradient-kapitec flex items-center justify-center font-headline font-extrabold text-xl text-white group-hover:scale-110 transition-transform duration-300">04</div>
 <div class="text-center w-32">
 <h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Load Assignment</h4>
 <p class="text-[11px] text-text-secondary leading-snug">Dispatch matching</p>
 </div>
 </div>
-<div class="flex flex-col items-center gap-4 group">
+<div class="flex flex-col items-center gap-4 group timeline-node">
 <div class="w-16 h-16 rounded-full border-gradient-kapitec flex items-center justify-center font-headline font-extrabold text-xl text-white group-hover:scale-110 transition-transform duration-300">05</div>
 <div class="text-center w-32">
 <h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Geofenced POD</h4>
 <p class="text-[11px] text-text-secondary leading-snug">Auto-capture at job site</p>
 </div>
 </div>
-<div class="flex flex-col items-center gap-4 group">
+<div class="flex flex-col items-center gap-4 group timeline-node">
 <div class="w-16 h-16 rounded-full border-gradient-kapitec flex items-center justify-center font-headline font-extrabold text-xl text-white group-hover:scale-110 transition-transform duration-300">06</div>
 <div class="text-center w-32">
 <h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Fast Settlement</h4>
@@ -826,6 +884,68 @@ Schedule via email
 </div>
 </footer>
 </main>
+<script>
+(function () {
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+
+    // 1) Auto-tag sections + cards with .reveal (skip hero so page isn't blank on load)
+    const hero = document.querySelector('main > section:first-of-type');
+    document.querySelectorAll('main > section').forEach(s => { if (s !== hero) s.classList.add('reveal'); });
+    const cardSelector = [
+        '[class*="bg-surface_container_lowest"][class*="rounded-"]',
+        '[class*="bg-surface_container"][class*="rounded-2xl"]',
+        '.border-gradient-kapitec',
+        '.mockup-frame'
+    ].join(',');
+    document.querySelectorAll(cardSelector).forEach(el => el.classList.add('reveal'));
+
+    // 2) IntersectionObserver triggers .in-view + counter animation
+    const counterRe = /^(-?\$?)(\d+(?:\.\d+)?)(.*)$/;
+    function animateCountersIn(scope) {
+        if (!scope) return;
+        scope.querySelectorAll('.font-mono').forEach(el => {
+            if (el.dataset._counted) return;
+            const original = el.textContent.trim();
+            const m = original.match(counterRe);
+            if (!m) return;
+            const prefix = m[1] || '';
+            const numStr = m[2];
+            const suffix = m[3] || '';
+            const target = parseFloat(numStr);
+            const decimals = (numStr.split('.')[1] || '').length;
+            if (target === 0) return;
+            el.dataset._counted = '1';
+            const duration = 1400;
+            const startT = performance.now();
+            el.textContent = prefix + (decimals ? '0.' + '0'.repeat(decimals) : '0') + suffix;
+            function tick(now) {
+                const t = Math.min(1, (now - startT) / duration);
+                const eased = 1 - Math.pow(1 - t, 3);
+                const val = (target * eased).toFixed(decimals);
+                el.textContent = prefix + val + suffix;
+                if (t < 1) requestAnimationFrame(tick);
+                else el.textContent = original;
+            }
+            requestAnimationFrame(tick);
+        });
+    }
+
+    const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('in-view');
+            animateCountersIn(entry.target);
+            revealObserver.unobserve(entry.target);
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+    document.querySelectorAll('.reveal, .timeline-row').forEach(el => revealObserver.observe(el));
+
+    // Hero stats count on load (above the fold, not observed)
+    setTimeout(() => animateCountersIn(hero), 200);
+})();
+</script>
 <a href="https://wa.me/526621050329?text=Hi%20Javi%2C%20I%20saw%20the%20Phoenix%20proposal%20for%20Dayanara%20and%20would%20like%20to%20talk" target="_blank" rel="noopener" aria-label="Message Javier on WhatsApp" class="wa-fab" title="Message Javier on WhatsApp">
 <svg viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.66 4.06 1.79 5.7L2 22l4.54-1.87a9.88 9.88 0 0 0 5.5 1.67h.01c5.46 0 9.9-4.45 9.91-9.91a9.9 9.9 0 0 0-9.92-9.89Zm5.79 14.15c-.24.67-1.42 1.28-1.99 1.32-.52.04-1.13.22-3.83-.85-3.22-1.28-5.27-4.58-5.43-4.79-.16-.21-1.31-1.73-1.31-3.3 0-1.57.82-2.34 1.11-2.66.29-.32.64-.4.85-.4.21 0 .42.01.6.02.2.01.47-.07.73.55.27.65.92 2.26 1 2.42.08.16.13.36.03.57-.1.21-.15.34-.3.52-.15.18-.31.4-.44.54-.15.15-.3.31-.13.61.17.3.77 1.28 1.65 2.08 1.14 1.02 2.1 1.34 2.41 1.49.31.16.49.13.67-.08.18-.21.78-.91.99-1.22.21-.31.41-.26.7-.15.28.1 1.78.84 2.08.99.31.16.51.23.59.37.08.14.08.81-.16 1.48Z"/></svg>
 </a>
