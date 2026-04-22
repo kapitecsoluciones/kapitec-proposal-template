@@ -278,13 +278,13 @@
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
 <div class="space-y-6 font-body text-[17px] leading-[1.65] text-text-secondary">
 <p>
-                        The Phoenix metropolitan area is experiencing unprecedented industrial and infrastructure expansion. Megaprojects like TSMC Fab 1 and 2, the Intel campus expansions, and the ongoing I-10 widening are creating immense, localized demand for aggregate transport.
+                        The Phoenix metropolitan area is in the middle of an unprecedented industrial and infrastructure build-out. TSMC Fab 1 and 2, Intel Ocotillo expansion, the I-10 widening and SR-202 extensions are generating localized, sustained demand for aggregate transport that the paper-ticket era cannot keep up with.
                     </p>
 <p>
-                        This scale breaks traditional dispatch. Brokers relying on manual phone calls, SMS coordination, and physical paper tickets are structurally incapable of handling the required volume efficiently. The administrative overhead of verifying compliance (like ADOT Form E) manually creates bottlenecks before a truck even moves.
+                        The mental model is right: this market needs an <strong class="text-white font-semibold">Uber-style marketplace for aggregate trucks</strong> — verified carriers, on-demand dispatch, transparent pricing, instant payment. Iron Sheepdog proved the model works in the Southeast US. Trux built a similar engine in the Northeast. Neither operates in Phoenix. Uber Freight is built for enterprise long-haul, not local aggregate. The window in Arizona is wide and it is open today.
                     </p>
 <p>
-                        The opportunity lies not just in moving dirt, but in digitizing the trust layer. By automating compliance verification and standardizing the proof-of-delivery (POD) process through geofencing, we can compress days of administrative friction into seconds of computation.
+                        What shifts "Uber for trucks" from slogan to defensible infrastructure is the compliance and payment layer that sits underneath the marketplace UX: ADOT Form E electronic tickets, CSL $1M insurance verification, FMCSR scoring, geofenced POD, Stripe Connect escrow with next-day settlement. Built right, that layer is not a feature — it is the moat.
                     </p>
 </div>
 <div class="bg-surface_container_lowest rounded-2xl p-8 ghost-border h-fit">
@@ -523,6 +523,20 @@
 <p class="text-text-secondary text-[16px] leading-[1.65]">Digital weigh tickets carry GPS timestamps, certified weight from integrated scale systems, and a digital signature that satisfies Arizona DOT audit requirements. Records are retained for 7 years with an immutable audit trail — available for export on demand.</p>
 </div>
 </div>
+<!-- Named stack row -->
+<div class="bg-surface_container_low rounded-2xl ghost-border p-8 mt-4">
+<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-4">// Named primitives — production-grade from day one</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-[14px]">
+<div><div class="font-mono text-white font-bold">Mapbox</div><div class="text-text-secondary">Geofencing, routing, ETA</div></div>
+<div><div class="font-mono text-white font-bold">AWS Textract</div><div class="text-text-secondary">Document OCR + field extraction</div></div>
+<div><div class="font-mono text-white font-bold">Stripe Connect</div><div class="text-text-secondary">Merchant onboarding, escrow, payouts</div></div>
+<div><div class="font-mono text-white font-bold">Twilio</div><div class="text-text-secondary">Driver SMS, voice fallbacks</div></div>
+<div><div class="font-mono text-white font-bold">Postgres · RDS</div><div class="text-text-secondary">Transaction ledger, audit trail</div></div>
+<div><div class="font-mono text-white font-bold">React Native</div><div class="text-text-secondary">iOS + Android driver app</div></div>
+<div><div class="font-mono text-white font-bold">Next.js · React</div><div class="text-text-secondary">Web console, admin portal</div></div>
+<div><div class="font-mono text-white font-bold">AWS · Vercel</div><div class="text-text-secondary">Hosting, observability, backups</div></div>
+</div>
+</div>
 </section>
 
 <!-- 05 · Geofencing That Pays For Itself -->
@@ -608,10 +622,49 @@ Load Cycle Analytics
 </div>
 </section>
 
-<!-- 07 · Roadmap -->
+<!-- 07 · Market & Comparables -->
+<section class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
+<div class="space-y-6 max-w-3xl">
+<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 07 · Market & Comparables</span>
+<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">What Uber could not do, and who already did it.</h2>
+<p class="text-text-secondary text-[17px] leading-[1.65]">The Uber model broke when applied naively to regulated freight — the original assumption was that drivers are gig workers, and they are not. Heavy haul carriers carry CDLs, $1M CSL insurance, ADOT filings, and DOT compliance obligations. What works is a marketplace with a verification layer built into the platform. The thesis has been validated by regional players; none of them operate in Phoenix.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-surface_container_lowest rounded-2xl ghost-border p-6 flex flex-col gap-3 min-h-[280px]">
+<div class="font-label text-[10px] uppercase tracking-[0.12em] text-text-muted">Competitor</div>
+<div class="font-headline font-extrabold text-xl text-white">Uber Freight</div>
+<p class="text-text-secondary text-sm leading-[1.55] flex-grow">Long-haul OTR freight for enterprise shippers. Built for national logistics, not local aggregate. No Arizona-specific compliance layer. No fit.</p>
+<div class="font-mono text-[11px] text-text-muted">Scope: national · Segment: OTR enterprise</div>
+</div>
+<div class="bg-surface_container_lowest rounded-2xl ghost-border p-6 flex flex-col gap-3 min-h-[280px]">
+<div class="font-label text-[10px] uppercase tracking-[0.12em] text-text-muted">Precedent</div>
+<div class="font-headline font-extrabold text-xl text-white">Iron Sheepdog</div>
+<p class="text-text-secondary text-sm leading-[1.55] flex-grow">The proof point. Aggregate transport marketplace operating in the Southeast US (Carolinas, Georgia, Virginia). Validates the thesis at scale. Not in Phoenix. Not built for Arizona's regulatory footprint.</p>
+<div class="font-mono text-[11px] text-text-muted">Scope: Southeast US · Segment: Aggregate</div>
+</div>
+<div class="bg-surface_container_lowest rounded-2xl ghost-border p-6 flex flex-col gap-3 min-h-[280px]">
+<div class="font-label text-[10px] uppercase tracking-[0.12em] text-text-muted">Precedent</div>
+<div class="font-headline font-extrabold text-xl text-white">Trux</div>
+<p class="text-text-secondary text-sm leading-[1.55] flex-grow">Construction freight platform concentrated in the Northeast. Similar thesis, different geography and regulation. Second proof the model works. No Phoenix presence.</p>
+<div class="font-mono text-[11px] text-text-muted">Scope: Northeast US · Segment: Construction</div>
+</div>
+<div class="bg-surface_container_lowest rounded-2xl p-6 flex flex-col gap-3 min-h-[280px] border-gradient-kapitec">
+<div class="font-label text-[10px] uppercase tracking-[0.12em] font-bold text-gradient">This Proposal</div>
+<div class="font-headline font-extrabold text-xl text-white">Kapitec × Phoenix</div>
+<p class="text-text-secondary text-sm leading-[1.55] flex-grow">Arizona-native: ADOT Form E + FMCSA built in, not bolted on. Stripe Connect fast-pay as the carrier-retention lever. Lean, boutique team — no ad-ops theater, no national distractions.</p>
+<div class="font-mono text-[11px] text-gradient">Scope: Phoenix metro · Segment: Aggregate + construction</div>
+</div>
+</div>
+<div class="bg-surface_container_low rounded-2xl ghost-border p-8 max-w-3xl">
+<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-3">// Why the window is open</div>
+<p class="text-text-secondary text-[16px] leading-[1.65]">The thesis is not unproven — Iron Sheepdog and Trux removed the category risk. What is unsolved is Phoenix. The two incumbents are regional operators whose expansion priorities are adjacent geographies, not Arizona. The time to own Phoenix is before they decide to fly west.</p>
+</div>
+</section>
+
+<!-- 08 · Roadmap -->
 <section id="roadmap" class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
 <div class="space-y-6 max-w-3xl">
-<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 07 · Roadmap</span>
+<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 08 · Roadmap</span>
 <h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Three months to a live, production-grade platform.</h2>
 <p class="text-text-secondary text-[17px] leading-[1.65]">The delivery window is three months end-to-end — from kickoff to the first carrier getting paid through the platform in production. Kapitec's AI-accelerated engineering compresses the build itself; the remaining time goes to client-side onboarding, Arizona regulatory validation, pilot carrier recruitment, and the calm operational ramp that a freight network needs. Nothing is rushed. Nothing is padded.</p>
 </div>
@@ -663,13 +716,13 @@ Load Cycle Analytics
 <p class="text-text-muted text-sm italic max-w-3xl">Engineering velocity on the Kapitec AI stack lets us compress the build itself to days, not quarters. The three-month window covers the full end-to-end: kickoff, build, pilot carrier onboarding, Arizona regulatory validation, and the live operational ramp to paying loads.</p>
 </section>
 
-<!-- 08 · Why Kapitec -->
+<!-- 09 · Why Kapitec -->
 <section id="credentials" class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
 <div class="space-y-6 max-w-3xl">
-<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 08 · Why Kapitec</span>
+<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 09 · Why Kapitec</span>
 <h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Twenty years building software that stays running.</h2>
 <p class="text-text-secondary text-[17px] leading-[1.65]">Kapitec Soluciones has been shipping production systems since 2006. Our work sits behind operations on both sides of the border — heavy construction supply chains, multi-entity contractors, dispatch floors in Mexico and the United States. We are a boutique firm by design: small team, long tenures, clients measured in decades, not quarters.</p>
-<p class="text-text-secondary text-[17px] leading-[1.65]">We keep most client engagements confidential. What we can say: our construction work covers operational back-offices for builders in Mexico and the US — aggregate transport, supplier reconciliation, multi-site dispatch, and compliance workflows tuned to each country's regulatory environment. Everything we ship stays running after we ship it. That is the only metric we care about.</p>
+<p class="text-text-secondary text-[17px] leading-[1.65]">Most of what we build sits inside our clients' operations, not in their marketing — the systems run every day but rarely carry a logo. The construction work specifically covers aggregate transport back-offices, supplier reconciliation, multi-site dispatch, and compliance workflows tuned to each country's regulatory environment (CFDI + SAT in Mexico, FMCSA + state DOTs in the US). We have built every primitive this proposal needs before — just never assembled under one Phoenix-focused platform.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <div class="bg-surface_container_lowest rounded-2xl ghost-border p-8 space-y-3">
@@ -700,10 +753,10 @@ Load Cycle Analytics
 </div>
 </section>
 
-<!-- 09 · Conclusion -->
+<!-- 10 · Conclusion -->
 <section class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
 <div class="space-y-6 max-w-3xl">
-<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 09 · Conclusion</span>
+<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 10 · Conclusion</span>
 <h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Not an app. Infrastructure.</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl">
