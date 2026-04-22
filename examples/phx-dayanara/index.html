@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="Kapitec strategic proposal — a compliance-first heavy freight marketplace for Phoenix. Prepared for Dayanara. ADOT Form E, GPS-verified POD, next-day carrier settlement."/>
+<meta name="theme-color" content="#070E1D"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Phoenix Heavy Freight Marketplace — Prepared for Dayanara"/>
+<meta property="og:description" content="A Kapitec consulting dossier for Phoenix heavy freight: compliance, GPS-verified POD, next-day carrier settlement."/>
+<meta property="og:url" content="https://kapitec.pro/phx/"/>
+<meta property="og:locale" content="en_US"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Phoenix Heavy Freight Marketplace — Prepared for Dayanara"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%232367FB'/><stop offset='1' stop-color='%232DD2A1'/></linearGradient></defs><rect width='32' height='32' rx='7' fill='%23070E1D'/><text x='16' y='22' text-anchor='middle' font-family='Plus Jakarta Sans,sans-serif' font-weight='800' font-size='18' fill='url(%23g)'>k.</text></svg>"/>
+<title>Phoenix Heavy Freight Marketplace — Kapitec · Prepared for Dayanara</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@700&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        surface: {
+                            DEFAULT: '#070E1D',
+                            dim: '#070E1D',
+                        },
+                        surface_container_lowest: '#0A1428',
+                        surface_container_low: '#101E34',
+                        surface_container: '#15263F',
+                        surface_container_high: '#1C3152',
+                        surface_container_highest: '#233D66',
+                        primary: {
+                            DEFAULT: '#2367FB',
+                            teal: '#2DD2A1'
+                        },
+                        accent: {
+                            amber: '#F59E0B'
+                        },
+                        text: {
+                            primary: '#F1F5F9',
+                            secondary: '#B0BEC5',
+                            muted: '#6F7E95'
+                        },
+                        'on-background': '#F1F5F9',
+                        'on-surface': '#F1F5F9',
+                        'on-surface-variant': '#B0BEC5',
+                        'on-background-muted': '#6F7E95',
+                        'background': '#070E1D',
+                        'surface-container-lowest': '#0A1428',
+                        'surface-container-low': '#101E34',
+                        'surface-container': '#15263F',
+                        'surface-container-high': '#1C3152',
+                        'surface-container-highest': '#233D66',
+                        secondary: {
+                            DEFAULT: '#2DD2A1'
+                        },
+                        tertiary: {
+                            DEFAULT: '#F59E0B'
+                        }
+                    },
+                    borderRadius: {
+                        "2xl": "1.5rem"
+                    },
+                    letterSpacing: {
+                        tighter: '-0.02em',
+                        widest: '0.12em'
+                    },
+                    fontFamily: {
+                        headline: ["Plus Jakarta Sans", "sans-serif"],
+                        display: ["Plus Jakarta Sans", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                        label: ["Inter", "sans-serif"],
+                        mono: ["JetBrains Mono", "monospace"]
+                    },
+                    backgroundImage: {
+                        'kapitec-gradient': 'linear-gradient(135deg, #2367FB 0%, #2DD2A1 100%)'
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #070E1D;
+            color: #F1F5F9;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #2367FB 0%, #2DD2A1 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .btn-gradient {
+            background: linear-gradient(135deg, #2367FB 0%, #2DD2A1 100%);
+            transition: filter 200ms ease-out;
+        }
+        
+        .btn-gradient:hover {
+            filter: brightness(1.1);
+        }
+
+        .ghost-border {
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .lucide-icon {
+            stroke-width: 1.5px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .border-gradient-kapitec {
+            border: 2px solid transparent;
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box;
+            background-image: linear-gradient(#0A1428, #0A1428), linear-gradient(135deg, #2367FB, #2DD2A1);
+        }
+
+        .bg-gradient-kapitec {
+            background-image: linear-gradient(135deg, #2367FB 0%, #2DD2A1 100%);
+        }
+
+        .shadow-glow {
+            box-shadow: 0 0 120px 20px rgba(35, 103, 251, 0.15);
+        }
+
+        html { scroll-behavior: smooth; }
+        section[id] { scroll-margin-top: 96px; }
+
+        /* Mockup frame — desktop + mobile variants */
+        .mockup-frame {
+            background: #0A1428;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 24px 64px -12px rgba(0,0,0,0.6);
+            position: relative;
+        }
+        .mockup-frame.desktop { aspect-ratio: 16 / 10; }
+        .mockup-frame.phone   { aspect-ratio: 9 / 16; max-width: 180px; margin-left: auto; margin-right: auto; }
+        .mockup-frame img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+    </style>
+</head>
+<body class="bg-surface text-text-primary antialiased">
+<!-- TopNavBar -->
+<nav class="bg-[#070E1D]/90 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-white/5 h-20 flex justify-between items-center px-6 md:px-24 max-w-[1200px] mx-auto">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-extrabold tracking-tighter text-white font-headline">kapi.</span>
+<span class="bg-accent-amber/10 text-accent-amber border border-accent-amber/20 px-3 py-1 rounded-full text-xs font-label uppercase tracking-widest">PHOENIX</span>
+</div>
+<div class="hidden lg:flex gap-8 items-center">
+<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#context">Context</a>
+<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#problem">Problem</a>
+<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#platform">Platform</a>
+<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#compliance">Compliance</a>
+<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#payments">Payments</a>
+<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#roadmap">Roadmap</a>
+<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#credentials">Credentials</a>
+</div>
+<button class="btn-gradient px-6 py-2.5 rounded-lg text-white font-label text-xs uppercase tracking-wider hidden md:block">
+            Request Session
+        </button>
+</nav>
+<!-- Main Content -->
+<main>
+<!-- Hero Section -->
+<section class="min-h-[921px] flex flex-col justify-center items-center relative px-6 md:px-24 max-w-[1200px] mx-auto py-24 text-center">
+<div class="absolute inset-0 z-0 flex items-center justify-center opacity-20 pointer-events-none">
+<div class="w-[600px] h-[600px] bg-primary rounded-full blur-[120px] mix-blend-screen"></div>
+</div>
+<div class="relative z-10 w-full">
+<p class="font-label text-text-muted text-xs uppercase tracking-[0.12em] mb-8">
+                    // 00 · Prepared for Dayanara · Phoenix, Arizona
+                </p>
+<h1 class="font-headline text-5xl md:text-[80px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-8 max-w-4xl mx-auto">
+                    The digital <span class="text-gradient">backbone</span> of Phoenix heavy freight.
+                </h1>
+<p class="font-body text-xl text-text-secondary mb-12 max-w-2xl mx-auto opacity-60">
+                    A compliance-first platform ecosystem for aggregate transport that unifies dispatch, verifies carriers instantly, and settles payments in 24 hours.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-24">
+<a href="#platform" class="btn-gradient px-8 py-4 rounded-lg text-white font-label text-sm uppercase tracking-wider w-full sm:w-auto inline-flex items-center justify-center gap-2">
+                        Walk Me Through the Proposal
+                        <span class="material-symbols-outlined" style="font-size:18px">arrow_downward</span>
+                    </a>
+<a target="_blank" rel="noopener" href="https://wa.me/526621050329?text=Hola%20Javi%2C%20vi%20la%20propuesta%20de%20Phoenix%20y%20quisiera%20agendar%20una%20sesi%C3%B3n" class="ghost-border px-8 py-4 rounded-lg text-white font-label text-sm uppercase tracking-wider hover:bg-white/5 transition-colors w-full sm:w-auto inline-flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="color:#2DD2A1;font-size:18px">forum</span>
+                        Talk on WhatsApp
+                    </a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto border-t border-white/5 pt-12 text-left">
+<div>
+<p class="font-mono text-4xl text-white mb-2">2.4B</p>
+<p class="font-label text-xs text-text-muted uppercase tracking-wider">Phoenix construction spend (2025)</p>
+</div>
+<div>
+<p class="font-mono text-4xl text-white mb-2">20%</p>
+<p class="font-label text-xs text-text-muted uppercase tracking-wider">Crew downtime reduction</p>
+</div>
+<div>
+<p class="font-mono text-4xl text-white mb-2">24h</p>
+<p class="font-label text-xs text-text-muted uppercase tracking-wider">Carrier payment settlement</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 01 Executive Context -->
+<section class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto" id="context">
+<p class="font-label text-text-muted text-xs uppercase tracking-[0.12em] mb-4">
+                // 01 · Executive Context
+            </p>
+<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-16 max-w-3xl">
+                Phoenix is building at a scale the paper-ticket era cannot serve.
+            </h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div class="space-y-6 font-body text-[17px] leading-[1.65] text-text-secondary">
+<p>
+                        The Phoenix metropolitan area is experiencing unprecedented industrial and infrastructure expansion. Megaprojects like TSMC Fab 1 and 2, the Intel campus expansions, and the ongoing I-10 widening are creating immense, localized demand for aggregate transport.
+                    </p>
+<p>
+                        This scale breaks traditional dispatch. Brokers relying on manual phone calls, SMS coordination, and physical paper tickets are structurally incapable of handling the required volume efficiently. The administrative overhead of verifying compliance (like ADOT Form E) manually creates bottlenecks before a truck even moves.
+                    </p>
+<p>
+                        The opportunity lies not just in moving dirt, but in digitizing the trust layer. By automating compliance verification and standardizing the proof-of-delivery (POD) process through geofencing, we can compress days of administrative friction into seconds of computation.
+                    </p>
+</div>
+<div class="bg-surface_container_lowest rounded-2xl p-8 ghost-border h-fit">
+<h3 class="font-headline text-xl font-bold mb-8 text-white">Market Drivers</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface_container p-4 rounded-lg">
+<span class="material-symbols-outlined text-accent-amber mb-2">gavel</span>
+<p class="font-label text-xs uppercase tracking-wider text-text-muted">ADOT Mandate</p>
+</div>
+<div class="bg-surface_container p-4 rounded-lg">
+<span class="material-symbols-outlined text-primary mb-2">trending_up</span>
+<p class="font-label text-xs uppercase tracking-wider text-text-muted">Population Growth</p>
+</div>
+<div class="bg-surface_container p-4 rounded-lg">
+<span class="material-symbols-outlined text-primary-teal mb-2">policy</span>
+<p class="font-label text-xs uppercase tracking-wider text-text-muted">FMCSA Rule</p>
+</div>
+<div class="bg-surface_container p-4 rounded-lg">
+<span class="material-symbols-outlined text-white mb-2">factory</span>
+<p class="font-label text-xs uppercase tracking-wider text-text-muted">Industrial Demand</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 02 What Breaks Today -->
+<section class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5" id="problem">
+<p class="font-label text-text-muted text-xs uppercase tracking-[0.12em] mb-4">
+                // 02 · What Breaks Today
+            </p>
+<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-16 max-w-3xl">
+                Three points of friction quietly bleeding margin.
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface_container_lowest p-8 rounded-xl border-l-2 border-accent-amber ghost-border flex flex-col gap-6">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<p class="font-mono text-4xl text-white mb-2">$4.2B</p>
+<p class="font-label text-xs uppercase tracking-wider text-text-muted mb-4">Lost to manual entry</p>
+<p class="font-body text-sm text-text-secondary leading-relaxed">
+                            Paper tickets are lost, misread, or delayed. Reconciling physical paperwork with dispatch logs requires dedicated headcount and delays invoicing significantly.
+                        </p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface_container_lowest p-8 rounded-xl border-l-2 border-accent-amber ghost-border flex flex-col gap-6">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">visibility_off</span>
+</div>
+<div>
+<p class="font-mono text-4xl text-white mb-2">3.2 hrs</p>
+<p class="font-label text-xs uppercase tracking-wider text-text-muted mb-4">Daily dispatch waste</p>
+<p class="font-body text-sm text-text-secondary leading-relaxed">
+                            Brokers spend hours calling carriers to check availability, negotiate rates, and verify location. This lack of real-time visibility prevents dynamic load matching.
+                        </p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface_container_lowest p-8 rounded-xl border-l-2 border-accent-amber ghost-border flex flex-col gap-6">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<div>
+<p class="font-mono text-4xl text-white mb-2">67 days</p>
+<p class="font-label text-xs uppercase tracking-wider text-text-muted mb-4">Average settlement</p>
+<p class="font-body text-sm text-text-secondary leading-relaxed">
+                            Carriers operate on thin margins. Forcing them to wait 60+ days for payment creates cash flow crises, driving them away from brokers who can't pay faster.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 03 Platform -->
+<section class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5" id="platform">
+<p class="font-label text-text-muted text-xs uppercase tracking-[0.12em] mb-4">
+                // 03 · A Three-Surface Platform
+            </p>
+<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-16 max-w-3xl">
+                One system. Three interfaces.
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Surface 1 -->
+<div class="bg-surface_container rounded-[24px] p-8 hover:bg-surface_container_high transition-colors duration-300">
+<span class="material-symbols-outlined text-white mb-6 text-3xl">desktop_windows</span>
+<h3 class="font-headline text-2xl font-bold text-white mb-6">Web Console</h3>
+<div class="mockup-frame desktop mb-6">
+<img src="mockups/webconsole.png" alt="Web Console dashboard showing Live Fleet Phoenix Metro — KPIs, active geofences on a Phoenix map, and ticket feed"/>
+</div>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-sm font-body text-text-secondary">
+<span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
+                            Live map dispatch and routing
+                        </li>
+<li class="flex items-start gap-3 text-sm font-body text-text-secondary">
+<span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
+                            Automated invoice generation
+                        </li>
+<li class="flex items-start gap-3 text-sm font-body text-text-secondary">
+<span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
+                            Carrier compliance dashboard
+                        </li>
+<li class="flex items-start gap-3 text-sm font-body text-text-secondary">
+<span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
+                            Real-time margin analytics
+                        </li>
+</ul>
+</div>
+<!-- Surface 2 -->
+<div class="bg-surface_container rounded-[24px] p-8 hover:bg-surface_container_high transition-colors duration-300">
+<span class="material-symbols-outlined text-white mb-6 text-3xl">smartphone</span>
+<h3 class="font-headline text-2xl font-bold text-white mb-6">Mobile App</h3>
+<div class="mockup-frame phone mb-6">
+<img src="mockups/mobile.png" alt="Driver mobile app showing active load, route from Queen Creek Quarry to SR-202 Site A, and Accept & Start Trip action"/>
+</div>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-sm font-body text-text-secondary">
+<span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
+                            One-tap load acceptance
+                        </li>
+<li class="flex items-start gap-3 text-sm font-body text-text-secondary">
+<span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
+                            Geofenced arrival detection
+                        </li>
+<li class="flex items-start gap-3 text-sm font-body text-text-secondary">
+<span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
+                            Digital ticket scanning
+                        </li>
+<li class="flex items-start gap-3 text-sm font-body text-text-secondary">
+<span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
+                            Instant earnings visibility
+                        </li>
+</ul>
+</div>
+<!-- Surface 3 -->
+<div class="bg-surface_container rounded-[24px] p-8 hover:bg-surface_container_high transition-colors duration-300">
+<span class="material-symbols-outlined text-white mb-6 text-3xl">admin_panel_settings</span>
+<h3 class="font-headline text-2xl font-bold text-white mb-6">Admin Portal</h3>
+<div class="mockup-frame desktop mb-6">
+<img src="mockups/admin.png" alt="Admin compliance center showing active carriers, expiring certifications, OCR verification queue, and insurance policy monitor"/>
+</div>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-sm font-body text-text-secondary">
+<span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
+                            Automated OCR document review
+                        </li>
+<li class="flex items-start gap-3 text-sm font-body text-text-secondary">
+<span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
+                            Exception management queue
+                        </li>
+<li class="flex items-start gap-3 text-sm font-body text-text-secondary">
+<span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
+                            Dispute resolution tools
+                        </li>
+<li class="flex items-start gap-3 text-sm font-body text-text-secondary">
+<span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
+                            Stripe Connect settlement oversight
+                        </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- 04 · Architecture of Trust -->
+<section id="compliance" class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
+<div class="space-y-6 max-w-3xl">
+<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 04 · Architecture of Trust</span>
+<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Every truck is verified before it ever moves.</h2>
+<p class="text-text-secondary text-[17px] leading-[1.65]">Carrier onboarding is the chokepoint that breaks when volume scales. The proposed platform runs a compliance engine that verifies documents, scores carriers, and assigns loads without human intervention — so onboarding a new fleet takes hours, not weeks.</p>
+</div>
+<!-- Desktop timeline -->
+<div class="relative py-12 hidden lg:block">
+<div class="absolute top-8 left-0 right-0 h-px border-t border-dashed border-white/20 z-0"></div>
+<div class="flex justify-between relative z-10 gap-4">
+<div class="flex flex-col items-center gap-4 group">
+<div class="w-16 h-16 rounded-full border-gradient-kapitec flex items-center justify-center font-headline font-extrabold text-xl text-white group-hover:scale-110 transition-transform duration-300">01</div>
+<div class="text-center w-32">
+<h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Carrier Signup</h4>
+<p class="text-[11px] text-text-secondary leading-snug">CDL, insurance, USDOT, W-9</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-4 group">
+<div class="w-16 h-16 rounded-full border-gradient-kapitec flex items-center justify-center font-headline font-extrabold text-xl text-white group-hover:scale-110 transition-transform duration-300">02</div>
+<div class="text-center w-32">
+<h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">OCR Verification</h4>
+<p class="text-[11px] text-text-secondary leading-snug">Extract fields, flag expiring docs</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-4 group">
+<div class="w-16 h-16 rounded-full border-gradient-kapitec flex items-center justify-center font-headline font-extrabold text-xl text-white group-hover:scale-110 transition-transform duration-300">03</div>
+<div class="text-center w-32">
+<h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Compliance Score</h4>
+<p class="text-[11px] text-text-secondary leading-snug">FMCSR A–F auto-rating</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-4 group">
+<div class="w-16 h-16 rounded-full border-gradient-kapitec flex items-center justify-center font-headline font-extrabold text-xl text-white group-hover:scale-110 transition-transform duration-300">04</div>
+<div class="text-center w-32">
+<h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Load Assignment</h4>
+<p class="text-[11px] text-text-secondary leading-snug">Dispatch matching</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-4 group">
+<div class="w-16 h-16 rounded-full border-gradient-kapitec flex items-center justify-center font-headline font-extrabold text-xl text-white group-hover:scale-110 transition-transform duration-300">05</div>
+<div class="text-center w-32">
+<h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Geofenced POD</h4>
+<p class="text-[11px] text-text-secondary leading-snug">Auto-capture at job site</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-4 group">
+<div class="w-16 h-16 rounded-full border-gradient-kapitec flex items-center justify-center font-headline font-extrabold text-xl text-white group-hover:scale-110 transition-transform duration-300">06</div>
+<div class="text-center w-32">
+<h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Fast Settlement</h4>
+<p class="text-[11px] text-text-secondary leading-snug">Stripe Connect release</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Mobile timeline -->
+<div class="lg:hidden space-y-8 pl-16 border-l border-dashed border-white/20 relative">
+<div class="relative"><div class="absolute -left-[68px] w-12 h-12 rounded-full border-gradient-kapitec flex items-center justify-center bg-[#0A1428] font-headline font-extrabold text-sm text-white">01</div><h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Carrier Signup</h4><p class="text-sm text-text-secondary">CDL, insurance, USDOT, W-9</p></div>
+<div class="relative"><div class="absolute -left-[68px] w-12 h-12 rounded-full border-gradient-kapitec flex items-center justify-center bg-[#0A1428] font-headline font-extrabold text-sm text-white">02</div><h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">OCR Verification</h4><p class="text-sm text-text-secondary">Extract fields, flag expiring docs</p></div>
+<div class="relative"><div class="absolute -left-[68px] w-12 h-12 rounded-full border-gradient-kapitec flex items-center justify-center bg-[#0A1428] font-headline font-extrabold text-sm text-white">03</div><h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Compliance Score</h4><p class="text-sm text-text-secondary">FMCSR A–F auto-rating</p></div>
+<div class="relative"><div class="absolute -left-[68px] w-12 h-12 rounded-full border-gradient-kapitec flex items-center justify-center bg-[#0A1428] font-headline font-extrabold text-sm text-white">04</div><h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Load Assignment</h4><p class="text-sm text-text-secondary">Dispatch matching</p></div>
+<div class="relative"><div class="absolute -left-[68px] w-12 h-12 rounded-full border-gradient-kapitec flex items-center justify-center bg-[#0A1428] font-headline font-extrabold text-sm text-white">05</div><h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Geofenced POD</h4><p class="text-sm text-text-secondary">Auto-capture at job site</p></div>
+<div class="relative"><div class="absolute -left-[68px] w-12 h-12 rounded-full border-gradient-kapitec flex items-center justify-center bg-[#0A1428] font-headline font-extrabold text-sm text-white">06</div><h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Fast Settlement</h4><p class="text-sm text-text-secondary">Stripe Connect release</p></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
+<div class="bg-surface_container_lowest p-8 rounded-2xl ghost-border border-l-2" style="border-left-color:#F59E0B">
+<h3 class="font-headline text-2xl font-bold mb-4 text-white">OCR Document Verification</h3>
+<p class="text-text-secondary text-[16px] leading-[1.65]">Every CDL (Class A or B), medical card, CSL $1M insurance certificate, ADOT Form E, and USDOT registration is ingested, field-extracted, and cross-checked against state databases. Documents nearing expiry trigger a renewal workflow 30 days out; anomalies route to a human review queue with a confidence score.</p>
+</div>
+<div class="bg-surface_container_lowest p-8 rounded-2xl ghost-border">
+<h3 class="font-headline text-2xl font-bold mb-4 text-white">ADOT Form E Integration</h3>
+<p class="text-text-secondary text-[16px] leading-[1.65]">Digital weigh tickets carry GPS timestamps, certified weight from integrated scale systems, and a digital signature that satisfies Arizona DOT audit requirements. Records are retained for 7 years with an immutable audit trail — available for export on demand.</p>
+</div>
+</div>
+</section>
+
+<!-- 05 · Geofencing That Pays For Itself -->
+<section class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
+<div class="space-y-6 max-w-3xl">
+<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 05 · Geofencing That Pays For Itself</span>
+<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">GPS is the foundation of automated compliance and instant POD.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-7 space-y-10">
+<div>
+<h3 class="font-headline text-2xl font-bold mb-4 text-white flex items-center gap-3">
+<span class="material-symbols-outlined" style="color:#2367FB;font-variation-settings:'FILL' 1">location_on</span>
+Automated Proof of Delivery
+</h3>
+<p class="text-text-secondary text-[17px] leading-[1.65]">A geofence around each job site and quarry lets the system auto-capture entry and exit events. No driver app-tap required. The POD record is created server-side from GPS + weight + timestamp — tamper-evident by construction. This eliminates the #1 source of billing disputes: what the quarry recorded vs. what the job site received.</p>
+</div>
+<div>
+<h3 class="font-headline text-2xl font-bold mb-4 text-white flex items-center gap-3">
+<span class="material-symbols-outlined" style="color:#2DD2A1;font-variation-settings:'FILL' 1">monitoring</span>
+Load Cycle Analytics
+</h3>
+<p class="text-text-secondary text-[17px] leading-[1.65]">Every completed cycle — quarry, job site, return leg — is a data point. Dwell time anomalies surface carrier performance and quarry bottlenecks so dispatch can reroute in real time instead of waiting for a weekly report.</p>
+</div>
+</div>
+<div class="md:col-span-5 relative">
+<div class="absolute inset-0 bg-[#F59E0B]/10 blur-[100px] rounded-full z-0 pointer-events-none"></div>
+<div class="bg-surface_container_lowest p-10 rounded-[24px] ghost-border relative z-10 flex flex-col justify-between min-h-[360px]" style="border-top:2px solid #F59E0B">
+<span class="font-label text-xs uppercase tracking-[0.12em] font-bold self-start px-3 py-1 rounded-full" style="color:#F59E0B;background:rgba(245,158,11,0.1)">HIGH-IMPACT</span>
+<div class="my-8">
+<div class="font-mono text-[80px] font-bold leading-none mb-2" style="color:#F59E0B">20%</div>
+<div class="font-label text-sm uppercase tracking-[0.12em] text-white">Target reduction in crew downtime</div>
+</div>
+<p class="text-text-secondary text-[15px] leading-[1.6] border-t border-white/5 pt-6 mt-auto">For a 5-crew operation idle at $150/hour, the conservative estimate is <span class="font-mono text-white">~$1.2M</span> in recovered productivity annually — before any carrier payment or dispatch gains.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 06 · Fast Pay Differentiator -->
+<section id="payments" class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16 relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] shadow-glow z-0 pointer-events-none"></div>
+<div class="space-y-6 max-w-3xl relative z-10">
+<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 06 · Fast Pay Differentiator</span>
+<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Speed of payment is the new retention tool.</h2>
+<p class="text-text-secondary text-[17px] leading-[1.65]">In a labor-scarce market, drivers go where they get paid fastest. Stripe Connect enables same-day and next-day settlement — turning the financial operation into a recruiting asset for carriers.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+<div class="bg-surface_container_lowest p-8 rounded-2xl ghost-border hover:bg-surface_container_low transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl mb-6" style="color:#2367FB;font-variation-settings:'FILL' 1">bolt</span>
+<h3 class="font-headline text-xl font-bold mb-3 text-white">Same-Day Settlement</h3>
+<p class="text-text-secondary text-sm leading-[1.6]">Funds hit the carrier bank the same day POD is GPS-verified. No weekly batch, no manual release.</p>
+</div>
+<div class="bg-surface_container_lowest p-8 rounded-2xl ghost-border hover:bg-surface_container_low transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl mb-6" style="color:#2DD2A1;font-variation-settings:'FILL' 1">credit_card</span>
+<h3 class="font-headline text-xl font-bold mb-3 text-white">Stripe Connect Escrow</h3>
+<p class="text-text-secondary text-sm leading-[1.6]">Platform holds payout in escrow until POD is confirmed. Dispute window auto-closes after 48 hours. Constructors pay net-15.</p>
+</div>
+<div class="bg-surface_container_lowest p-8 rounded-2xl ghost-border hover:bg-surface_container_low transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl mb-6" style="color:#F59E0B;font-variation-settings:'FILL' 1">trending_up</span>
+<h3 class="font-headline text-xl font-bold mb-3 text-white">Earned Wage Access</h3>
+<p class="text-text-secondary text-sm leading-[1.6]">Drivers can draw up to 80% of completed-but-unpaid earnings on demand. Opt-in and optional.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 relative z-10">
+<div class="bg-surface_container_lowest/50 p-8 rounded-2xl ghost-border flex items-center justify-between opacity-70">
+<div>
+<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-2">Traditional Model</div>
+<div class="font-mono text-3xl font-bold text-text-secondary">Net 60</div>
+<div class="text-xs text-text-muted mt-2">Invoice → AP approval → payment run → bank days</div>
+</div>
+<span class="material-symbols-outlined text-text-muted text-4xl">hourglass_empty</span>
+</div>
+<div class="p-8 rounded-2xl border-gradient-kapitec shadow-glow flex items-center justify-between relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-kapitec opacity-[0.08]"></div>
+<div class="relative z-10">
+<div class="font-label text-xs uppercase tracking-[0.12em] mb-2 text-gradient font-bold">Kapitec Platform</div>
+<div class="font-mono text-3xl font-extrabold text-white flex items-baseline gap-2">24 <span class="text-xl text-text-secondary font-body font-normal">hours</span></div>
+<div class="text-xs text-text-secondary mt-2">POD verified → escrow released → carrier wallet</div>
+</div>
+<span class="material-symbols-outlined text-4xl relative z-10" style="color:#2DD2A1;font-variation-settings:'FILL' 1">check_circle</span>
+</div>
+</div>
+</section>
+
+<!-- 07 · Roadmap — Tiempos de IA -->
+<section id="roadmap" class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
+<div class="space-y-6 max-w-3xl">
+<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 07 · Roadmap — Tiempos de IA</span>
+<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Crawl, walk, run — measured in days, not months.</h2>
+<p class="text-text-secondary text-[17px] leading-[1.65]">Kapitec builds with AI-accelerated delivery. What a traditional agency schedules in quarters, we deliver in days. The roadmap below reflects real engineering time on the Kapitec AI stack. Client-side onboarding, regulatory validation and commercial milestones are scheduled separately.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface_container_lowest rounded-2xl ghost-border p-10 flex flex-col gap-6">
+<div class="font-headline font-extrabold text-[88px] leading-none text-gradient">01</div>
+<div>
+<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-2">Phase · Foundation</div>
+<span class="inline-block font-mono text-sm font-bold px-3 py-1 rounded-full" style="color:#F59E0B;background:rgba(245,158,11,0.12)">5–7 days</span>
+</div>
+<ul class="space-y-3 mt-4">
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Digital ticketing (quarry → job site)</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>GPS truck tracking and geofencing</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>CDL / insurance OCR verification engine</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>ADOT Form E integration</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Pilot carriers and constructor onboarded</li>
+</ul>
+</div>
+<div class="bg-surface_container_lowest rounded-2xl ghost-border p-10 flex flex-col gap-6">
+<div class="font-headline font-extrabold text-[88px] leading-none text-gradient">02</div>
+<div>
+<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-2">Phase · Payments</div>
+<span class="inline-block font-mono text-sm font-bold px-3 py-1 rounded-full" style="color:#F59E0B;background:rgba(245,158,11,0.12)">3–4 days</span>
+</div>
+<ul class="space-y-3 mt-4">
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Stripe Connect merchant onboarding</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Next-day payment automation</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Automated insurance expiry monitoring</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Load matching algorithm v1</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Carrier performance scorecards</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Invoice reconciliation engine</li>
+</ul>
+</div>
+<div class="bg-surface_container_lowest rounded-2xl ghost-border p-10 flex flex-col gap-6">
+<div class="font-headline font-extrabold text-[88px] leading-none text-gradient">03</div>
+<div>
+<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-2">Phase · Intelligence</div>
+<span class="inline-block font-mono text-sm font-bold px-3 py-1 rounded-full" style="color:#F59E0B;background:rgba(245,158,11,0.12)">6–8 days</span>
+</div>
+<ul class="space-y-3 mt-4">
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Route optimization and wait-time prediction</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Dynamic pricing engine (supply / demand)</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Quarry capacity API integrations</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Multi-project dispatch for general contractors</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>BI dashboard for CFO-level reporting</li>
+</ul>
+</div>
+</div>
+<p class="text-text-muted text-sm italic max-w-3xl">Durations are engineering time on the Kapitec AI agent stack. Kick-off dates, pilot recruitment, and Arizona regulatory validation are planned around the client's calendar.</p>
+</section>
+
+<!-- 08 · Why Kapitec — Credentials -->
+<section id="credentials" class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
+<div class="space-y-6 max-w-3xl">
+<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 08 · Why Kapitec — Credentials</span>
+<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Built this. Shipped this. Operating this.</h2>
+<p class="text-text-secondary text-[17px] leading-[1.65]">Kapitec Soluciones has been shipping production software since 2006. The platforms listed below are live today — not mock-ups, not pilots. Every engagement is under an active operating contract with its client, and every URL below is reachable from any browser.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+<a href="https://kapitec.pro/r136/" target="_blank" rel="noopener" class="bg-surface_container_lowest rounded-2xl ghost-border p-6 hover:bg-surface_container_low transition-colors duration-300 flex flex-col gap-4 min-h-[200px]">
+<div class="font-headline font-extrabold text-xl text-white">R136 Protech</div>
+<p class="text-text-secondary text-sm leading-[1.55] flex-grow">Porsche-grade paint protection operations platform and client portal.</p>
+<div class="text-[11px] font-mono font-bold text-gradient">Live · kapitec.pro/r136 →</div>
+</a>
+<a href="https://safetravelmexico.com/" target="_blank" rel="noopener" class="bg-surface_container_lowest rounded-2xl ghost-border p-6 hover:bg-surface_container_low transition-colors duration-300 flex flex-col gap-4 min-h-[200px]">
+<div class="font-headline font-extrabold text-xl text-white">SafeTravel Mexico</div>
+<p class="text-text-secondary text-sm leading-[1.55] flex-grow">Data-driven travel safety intelligence for foreign visitors to Mexico.</p>
+<div class="text-[11px] font-mono font-bold text-gradient">Live · safetravelmexico.com →</div>
+</a>
+<a href="https://kapitec.pro/emmental/" target="_blank" rel="noopener" class="bg-surface_container_lowest rounded-2xl ghost-border p-6 hover:bg-surface_container_low transition-colors duration-300 flex flex-col gap-4 min-h-[200px]">
+<div class="font-headline font-extrabold text-xl text-white">Emmental Group</div>
+<p class="text-text-secondary text-sm leading-[1.55] flex-grow">Multi-entity construction ERP running across four operating companies.</p>
+<div class="text-[11px] font-mono font-bold text-gradient">Live · kapitec.pro/emmental →</div>
+</a>
+<a href="https://smartclose.kapitec.pro/" target="_blank" rel="noopener" class="bg-surface_container_lowest rounded-2xl ghost-border p-6 hover:bg-surface_container_low transition-colors duration-300 flex flex-col gap-4 min-h-[200px]">
+<div class="font-headline font-extrabold text-xl text-white">SmartClose OS</div>
+<p class="text-text-secondary text-sm leading-[1.55] flex-grow">California real estate closing automation for agents and transaction coordinators.</p>
+<div class="text-[11px] font-mono font-bold text-gradient">Live · smartclose.kapitec.pro →</div>
+</a>
+<a href="https://kapi.mx/" target="_blank" rel="noopener" class="bg-surface_container_lowest rounded-2xl ghost-border p-6 hover:bg-surface_container_low transition-colors duration-300 flex flex-col gap-4 min-h-[200px]">
+<div class="font-headline font-extrabold text-xl text-white">Kapi POS</div>
+<p class="text-text-secondary text-sm leading-[1.55] flex-grow">Cloud POS for Mexican multi-branch retail and foodservice — operating since 2006.</p>
+<div class="text-[11px] font-mono font-bold text-gradient">Live · kapi.mx →</div>
+</a>
+</div>
+</section>
+
+<!-- 09 · Conclusion -->
+<section class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
+<div class="space-y-6 max-w-3xl">
+<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 09 · Conclusion</span>
+<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Not an app. Infrastructure.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl">
+<p class="text-text-secondary text-[17px] leading-[1.65]">Phoenix represents a structural — not incremental — opportunity. The scale of the current build (TSMC Fab 1 and 2, Intel Ocotillo, I-10 widening, SR-202 extensions), the regulatory tailwind (ADOT Form E, FMCSA ELD), and the absence of a dominant digital incumbent align maybe once a decade. Whoever builds the trusted infrastructure for aggregate transport in Phoenix defines how that market operates for the next fifteen years.</p>
+<p class="text-text-secondary text-[17px] leading-[1.65]">The technical recommendation is to prioritize scale-integrated weigh data and insurance compliance on day one — these are the highest-friction points preventing efficient collaboration between carriers and constructors today. Route optimization compounds on top of that foundation; it is not a substitute for it. The AI work we do is invisible by design: a facilitator that lets constructors focus on building and drivers focus on driving.</p>
+</div>
+<div class="max-w-4xl mx-auto text-center py-12 border-t border-b border-white/5 my-8">
+<p class="font-headline italic text-2xl md:text-3xl leading-[1.4] text-white">"Technology is the invisible enabler. Constructors focus on building. Drivers focus on driving. Administrative friction is what we remove — permanently."</p>
+</div>
+</section>
+
+<!-- Contact / CTA -->
+<section id="contact" class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-start">
+<div class="md:col-span-3 space-y-6">
+<h2 class="font-headline text-3xl md:text-[44px] leading-[1.1] tracking-[-0.02em] font-extrabold">Walk me through the numbers for Dayanara's operation.</h2>
+<p class="text-text-secondary text-[17px] leading-[1.65]">A 30-minute working session. I'll bring a live walkthrough of the platform mapped to real Phoenix routes, run the compliance engine against a sample Arizona CDL, and sketch the day-one integration plan. No slides — only real screens.</p>
+<div class="pt-4 space-y-2 text-sm text-text-muted font-label tracking-wider uppercase">
+<div>Javier Enríquez · Kapitec Soluciones</div>
+<div>Guadalajara, México · <span class="font-mono normal-case">+52 662 105 0329</span></div>
+<div class="normal-case tracking-normal font-body text-text-secondary"><a href="mailto:info@kapitec.pro" class="hover:text-white transition-colors">info@kapitec.pro</a></div>
+</div>
+</div>
+<div class="md:col-span-2 space-y-4">
+<a href="https://wa.me/526621050329?text=Hola%20Javi%2C%20vi%20la%20propuesta%20de%20Phoenix%20y%20me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n" target="_blank" rel="noopener" class="btn-gradient w-full h-[56px] rounded-lg text-white font-label text-sm uppercase tracking-wider inline-flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" style="font-size:20px">forum</span>
+Talk on WhatsApp
+</a>
+<a href="mailto:info@kapitec.pro?subject=Phoenix%20Freight%20Proposal%20%E2%80%94%20Dayanara&body=Hola%20Javier%2C%0A%0ARevisamos%20la%20propuesta%20y%20queremos%20agendar%20una%20sesi%C3%B3n." class="ghost-border w-full h-[56px] rounded-lg text-white font-label text-sm uppercase tracking-wider hover:bg-white/5 transition-colors inline-flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" style="font-size:20px;color:#2DD2A1">mail</span>
+Schedule via email
+</a>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#070E1D] full-width border-t border-white/5 pt-16 pb-8">
+<div class="max-w-[1200px] mx-auto px-6 md:px-24 flex flex-col gap-8">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold text-white font-headline">kapi.</span>
+<span class="bg-[#F59E0B]/10 border border-[#F59E0B]/20 px-2.5 py-1 rounded-full text-[10px] font-label uppercase tracking-widest" style="color:#F59E0B">PHOENIX</span>
+</div>
+<div class="flex gap-6">
+<a class="text-[#6F7E95] hover:text-white transition-colors font-label text-xs uppercase tracking-wider" href="https://kapitec.pro/" target="_blank" rel="noopener">kapitec.pro</a>
+<a class="text-[#6F7E95] hover:text-white transition-colors font-label text-xs uppercase tracking-wider" href="mailto:info@kapitec.pro">info@kapitec.pro</a>
+<a class="text-[#6F7E95] hover:text-white transition-colors font-label text-xs uppercase tracking-wider" href="https://wa.me/526621050329" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+</div>
+<p class="text-[#6F7E95] font-body text-sm mt-8 border-t border-white/5 pt-8">
+© 2006–2026 Kapitec Soluciones S.A.P.I. de C.V. · Javier Enríquez · Guadalajara, México · +52 662 105 0329
+</p>
+</div>
+</footer>
+</main>
+</body></html>
