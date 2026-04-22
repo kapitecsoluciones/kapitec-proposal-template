@@ -50,7 +50,7 @@ urlencode() {
     python3 -c "import urllib.parse,sys; print(urllib.parse.quote(sys.argv[1]))" "$1"
 }
 
-WA_BODY_ENCODED=$(urlencode "Hola Javi, vi la propuesta de ${PROPOSAL_TITLE} y me gustaría agendar una sesión")
+WA_BODY_ENCODED=$(urlencode "Hi Javi, I saw the ${PROPOSAL_TITLE} proposal for ${CLIENT_NAME} and I'd like to schedule a session")
 EMAIL_SUBJECT_ENCODED=$(urlencode "${PROPOSAL_TITLE} — ${CLIENT_NAME}")
 META_DESCRIPTION="Kapitec strategic proposal — ${PROPOSAL_TITLE}. Prepared for ${CLIENT_NAME}, ${CLIENT_LOCATION}."
 
