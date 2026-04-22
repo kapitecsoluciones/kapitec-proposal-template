@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
+<html class="dark" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta name="description" content="__META_DESCRIPTION__"/>
@@ -91,11 +91,24 @@
         }
     </script>
 <style>
-        body {
+        html, body {
             background-color: #070E1D;
             color: #F1F5F9;
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        /* Contain decorative absolute-positioned elements so they don't cause
+           horizontal scroll on small viewports. */
+        main > section { overflow-x: clip; }
+
+        /* Clamp stray wide decorative elements on mobile */
+        @media (max-width: 767px) {
+            .w-\[600px\], .w-\[800px\] { max-width: 100vw !important; }
+            .h-\[600px\] { height: 60vw !important; }
+            .h-\[400px\] { height: 40vw !important; }
         }
 
         .text-gradient {
@@ -211,13 +224,13 @@
 <span class="bg-accent-amber/10 text-accent-amber border border-accent-amber/20 px-3 py-1 rounded-full text-xs font-label uppercase tracking-widest">__INDUSTRY_BADGE__</span>
 </div>
 <div class="hidden lg:flex gap-8 items-center">
-<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#context">Context</a>
-<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#problem">Problem</a>
-<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#platform">Platform</a>
-<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#compliance">Compliance</a>
-<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#payments">Payments</a>
-<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#roadmap">Roadmap</a>
-<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#credentials">Credentials</a>
+<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#context">Contexto</a>
+<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#problem">Problema</a>
+<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#platform">Plataforma</a>
+<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#compliance">Cumplimiento</a>
+<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#payments">Pagos</a>
+<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#roadmap">Hoja de ruta</a>
+<a class="text-[#B0BEC5] hover:text-white transition-colors font-label text-xs uppercase tracking-[0.12em]" href="#credentials">Credenciales</a>
 </div>
 <a href="https://wa.me/526621050329?text=__WA_BODY_ENCODED__" target="_blank" rel="noopener" class="btn-gradient px-5 py-2.5 rounded-lg text-white font-label text-xs uppercase tracking-wider hidden md:inline-flex items-center gap-2 whitespace-nowrap">
 <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.66 4.06 1.79 5.7L2 22l4.54-1.87a9.88 9.88 0 0 0 5.5 1.67h.01c5.46 0 9.9-4.45 9.91-9.91a9.9 9.9 0 0 0-9.92-9.89Zm5.79 14.15c-.24.67-1.42 1.28-1.99 1.32-.52.04-1.13.22-3.83-.85-3.22-1.28-5.27-4.58-5.43-4.79-.16-.21-1.31-1.73-1.31-3.3 0-1.57.82-2.34 1.11-2.66.29-.32.64-.4.85-.4.21 0 .42.01.6.02.2.01.47-.07.73.55.27.65.92 2.26 1 2.42.08.16.13.36.03.57-.1.21-.15.34-.3.52-.15.18-.31.4-.44.54-.15.15-.3.31-.13.61.17.3.77 1.28 1.65 2.08 1.14 1.02 2.1 1.34 2.41 1.49.31.16.49.13.67-.08.18-.21.78-.91.99-1.22.21-.31.41-.26.7-.15.28.1 1.78.84 2.08.99.31.16.51.23.59.37.08.14.08.81-.16 1.48Z"/></svg>
@@ -233,9 +246,9 @@
 </div>
 <div class="relative z-10 w-full">
 <p class="font-label text-text-muted text-xs uppercase tracking-[0.12em] mb-8">
-                    // 00 · Prepared for __CLIENT_NAME__ · __CLIENT_LOCATION__
+                    // 00 · Preparada para __CLIENT_NAME__ · __CLIENT_LOCATION__
                 </p>
-<h1 class="font-headline text-5xl md:text-[80px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-8 max-w-4xl mx-auto">
+<h1 class="font-headline text-[40px] sm:text-5xl md:text-[80px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-8 max-w-4xl mx-auto">
                     The digital <span class="text-gradient">backbone</span> of Phoenix heavy freight.
                 </h1>
 <p class="font-body text-xl text-text-secondary mb-12 max-w-2xl mx-auto opacity-60">
@@ -244,25 +257,25 @@
 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-24">
 <a target="_blank" rel="noopener" href="https://wa.me/526621050329?text=__WA_BODY_ENCODED__" class="btn-gradient px-8 py-4 rounded-lg text-white font-label text-sm uppercase tracking-wider w-full sm:w-auto inline-flex items-center justify-center gap-3">
 <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.66 4.06 1.79 5.7L2 22l4.54-1.87a9.88 9.88 0 0 0 5.5 1.67h.01c5.46 0 9.9-4.45 9.91-9.91a9.9 9.9 0 0 0-9.92-9.89Zm5.79 14.15c-.24.67-1.42 1.28-1.99 1.32-.52.04-1.13.22-3.83-.85-3.22-1.28-5.27-4.58-5.43-4.79-.16-.21-1.31-1.73-1.31-3.3 0-1.57.82-2.34 1.11-2.66.29-.32.64-.4.85-.4.21 0 .42.01.6.02.2.01.47-.07.73.55.27.65.92 2.26 1 2.42.08.16.13.36.03.57-.1.21-.15.34-.3.52-.15.18-.31.4-.44.54-.15.15-.3.31-.13.61.17.3.77 1.28 1.65 2.08 1.14 1.02 2.1 1.34 2.41 1.49.31.16.49.13.67-.08.18-.21.78-.91.99-1.22.21-.31.41-.26.7-.15.28.1 1.78.84 2.08.99.31.16.51.23.59.37.08.14.08.81-.16 1.48Z"/></svg>
-                        WhatsApp Javi Now
+                        WhatsApp a Javi
                     </a>
 <a href="#platform" class="ghost-border px-8 py-4 rounded-lg text-white font-label text-sm uppercase tracking-wider hover:bg-white/5 transition-colors w-full sm:w-auto inline-flex items-center justify-center gap-2">
-                        Walk Me Through the Proposal
+                        Recórranme la propuesta
                         <span class="material-symbols-outlined" style="font-size:18px">arrow_downward</span>
                     </a>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto border-t border-white/5 pt-12 text-left">
 <div>
 <p class="font-mono text-4xl text-white mb-2">2.4B</p>
-<p class="font-label text-xs text-text-muted uppercase tracking-wider">Phoenix construction spend (2025)</p>
+<p class="font-label text-xs text-text-muted uppercase tracking-wider">Inversión en construcción en Phoenix (2025)</p>
 </div>
 <div>
 <p class="font-mono text-4xl text-white mb-2">20%</p>
-<p class="font-label text-xs text-text-muted uppercase tracking-wider">Crew downtime reduction</p>
+<p class="font-label text-xs text-text-muted uppercase tracking-wider">Reducción de tiempo muerto de cuadrilla</p>
 </div>
 <div>
 <p class="font-mono text-4xl text-white mb-2">24h</p>
-<p class="font-label text-xs text-text-muted uppercase tracking-wider">Carrier payment settlement</p>
+<p class="font-label text-xs text-text-muted uppercase tracking-wider">Liquidación de pago a transportista</p>
 </div>
 </div>
 </div>
@@ -270,41 +283,41 @@
 <!-- 01 Executive Context -->
 <section class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto" id="context">
 <p class="font-label text-text-muted text-xs uppercase tracking-[0.12em] mb-4">
-                // 01 · Executive Context
+                // 01 · Contexto Ejecutivo
             </p>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-16 max-w-3xl">
-                Phoenix is building at a scale the paper-ticket era cannot serve.
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-16 max-w-3xl">
+                Phoenix está construyendo a una escala que la era del ticket de papel no puede atender.
             </h2>
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
 <div class="space-y-6 font-body text-[17px] leading-[1.65] text-text-secondary">
 <p>
-                        The Phoenix metropolitan area is in the middle of an unprecedented industrial and infrastructure build-out. TSMC Fab 1 and 2, Intel Ocotillo expansion, the I-10 widening and SR-202 extensions are generating localized, sustained demand for aggregate transport that the paper-ticket era cannot keep up with.
+                        El área metropolitana de Phoenix atraviesa una expansión industrial y de infraestructura sin precedentes. TSMC Fab 1 y 2, la expansión de Intel Ocotillo, el ensanche de la I-10 y las extensiones de la SR-202 generan una demanda localizada y sostenida de transporte de agregados que la era del ticket de papel no puede seguir.
                     </p>
 <p>
-                        The mental model is right: this market needs an <strong class="text-white font-semibold">Uber-style marketplace for aggregate trucks</strong> — verified carriers, on-demand dispatch, transparent pricing, instant payment. Iron Sheepdog proved the model works in the Southeast US. Trux built a similar engine in the Northeast. Neither operates in Phoenix. Uber Freight is built for enterprise long-haul, not local aggregate. The window in Arizona is wide and it is open today.
+                        El mental model es el correcto: este mercado necesita un <strong class="text-white font-semibold">marketplace estilo Uber para camiones de agregados</strong> — transportistas verificados, despacho bajo demanda, precios transparentes, pago instantáneo. Iron Sheepdog ya probó el modelo en el sureste de EE. UU. Trux construyó un motor similar en el noreste. Ninguno opera en Phoenix. Uber Freight está construido para long-haul corporativo, no para agregados locales. La ventana en Arizona es amplia y está abierta hoy.
                     </p>
 <p>
-                        What shifts "Uber for trucks" from slogan to defensible infrastructure is the compliance and payment layer that sits underneath the marketplace UX: ADOT Form E electronic tickets, CSL $1M insurance verification, FMCSR scoring, geofenced POD, Stripe Connect escrow with next-day settlement. Built right, that layer is not a feature — it is the moat.
+                        Lo que convierte "Uber para camiones" de eslogan a infraestructura defendible es la capa de cumplimiento y pagos bajo el UX del marketplace: boletos electrónicos ADOT Form E, verificación de seguro CSL $1M, scoring FMCSR, POD geocercada, escrow Stripe Connect con liquidación al día siguiente. Bien construida, esa capa no es un feature — es el foso.
                     </p>
 </div>
 <div class="bg-surface_container_lowest rounded-2xl p-8 ghost-border h-fit">
-<h3 class="font-headline text-xl font-bold mb-8 text-white">Market Drivers</h3>
+<h3 class="font-headline text-xl font-bold mb-8 text-white">Motores de Mercado</h3>
 <div class="grid grid-cols-2 gap-4">
 <div class="bg-surface_container p-4 rounded-lg">
 <span class="material-symbols-outlined text-accent-amber mb-2">gavel</span>
-<p class="font-label text-xs uppercase tracking-wider text-text-muted">ADOT Mandate</p>
+<p class="font-label text-xs uppercase tracking-wider text-text-muted">Mandato ADOT</p>
 </div>
 <div class="bg-surface_container p-4 rounded-lg">
 <span class="material-symbols-outlined text-primary mb-2">trending_up</span>
-<p class="font-label text-xs uppercase tracking-wider text-text-muted">Population Growth</p>
+<p class="font-label text-xs uppercase tracking-wider text-text-muted">Crecimiento Demográfico</p>
 </div>
 <div class="bg-surface_container p-4 rounded-lg">
 <span class="material-symbols-outlined text-primary-teal mb-2">policy</span>
-<p class="font-label text-xs uppercase tracking-wider text-text-muted">FMCSA Rule</p>
+<p class="font-label text-xs uppercase tracking-wider text-text-muted">Regla FMCSA</p>
 </div>
 <div class="bg-surface_container p-4 rounded-lg">
 <span class="material-symbols-outlined text-white mb-2">factory</span>
-<p class="font-label text-xs uppercase tracking-wider text-text-muted">Industrial Demand</p>
+<p class="font-label text-xs uppercase tracking-wider text-text-muted">Demanda Industrial</p>
 </div>
 </div>
 </div>
@@ -313,10 +326,10 @@
 <!-- 02 What Breaks Today -->
 <section class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5" id="problem">
 <p class="font-label text-text-muted text-xs uppercase tracking-[0.12em] mb-4">
-                // 02 · What Breaks Today
+                // 02 · Lo que se Rompe Hoy
             </p>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-16 max-w-3xl">
-                Three points of friction quietly bleeding margin.
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-16 max-w-3xl">
+                Tres puntos de fricción que sangran margen en silencio.
             </h2>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <!-- Card 1 -->
@@ -326,9 +339,9 @@
 </div>
 <div>
 <p class="font-mono text-4xl text-white mb-2">$4.2B</p>
-<p class="font-label text-xs uppercase tracking-wider text-text-muted mb-4">Lost to manual entry</p>
+<p class="font-label text-xs uppercase tracking-wider text-text-muted mb-4">Pérdidas por captura manual</p>
 <p class="font-body text-sm text-text-secondary leading-relaxed">
-                            Paper tickets are lost, misread, or delayed. Reconciling physical paperwork with dispatch logs requires dedicated headcount and delays invoicing significantly.
+                            Los boletos de papel se pierden, se mal-leen o se atrasan. Conciliar papel con el log de despacho requiere personal dedicado y retrasa la facturación de forma significativa.
                         </p>
 </div>
 </div>
@@ -339,9 +352,9 @@
 </div>
 <div>
 <p class="font-mono text-4xl text-white mb-2">3.2 hrs</p>
-<p class="font-label text-xs uppercase tracking-wider text-text-muted mb-4">Daily dispatch waste</p>
+<p class="font-label text-xs uppercase tracking-wider text-text-muted mb-4">Desperdicio diario de despacho</p>
 <p class="font-body text-sm text-text-secondary leading-relaxed">
-                            Brokers spend hours calling carriers to check availability, negotiate rates, and verify location. This lack of real-time visibility prevents dynamic load matching.
+                            Los brokers pasan horas llamando a transportistas para revisar disponibilidad, negociar tarifas y verificar ubicación. La falta de visibilidad en tiempo real impide el matching dinámico de cargas.
                         </p>
 </div>
 </div>
@@ -352,9 +365,9 @@
 </div>
 <div>
 <p class="font-mono text-4xl text-white mb-2">67 days</p>
-<p class="font-label text-xs uppercase tracking-wider text-text-muted mb-4">Average settlement</p>
+<p class="font-label text-xs uppercase tracking-wider text-text-muted mb-4">Liquidación promedio</p>
 <p class="font-body text-sm text-text-secondary leading-relaxed">
-                            Carriers operate on thin margins. Forcing them to wait 60+ days for payment creates cash flow crises, driving them away from brokers who can't pay faster.
+                            Los transportistas operan con márgenes delgados. Obligarlos a esperar 60+ días por pago genera crisis de flujo de efectivo y los aleja de brokers que no pueden pagar más rápido.
                         </p>
 </div>
 </div>
@@ -363,87 +376,87 @@
 <!-- 03 Platform -->
 <section class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5" id="platform">
 <p class="font-label text-text-muted text-xs uppercase tracking-[0.12em] mb-4">
-                // 03 · A Three-Surface Platform
+                // 03 · Una Plataforma de Tres Interfaces
             </p>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-16 max-w-3xl">
-                One system. Three interfaces.
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-16 max-w-3xl">
+                Un sistema. Tres interfaces.
             </h2>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <!-- Surface 1 -->
 <div class="bg-surface_container rounded-[24px] p-8 hover:bg-surface_container_high transition-colors duration-300">
 <span class="material-symbols-outlined text-white mb-6 text-3xl">desktop_windows</span>
-<h3 class="font-headline text-2xl font-bold text-white mb-6">Web Console</h3>
+<h3 class="font-headline text-2xl font-bold text-white mb-6">Consola Web</h3>
 <div class="mockup-frame desktop mb-6">
 <img src="mockups/webconsole.png" alt="Web Console dashboard showing Live Fleet Phoenix Metro — KPIs, active geofences on a Phoenix map, and ticket feed"/>
 </div>
 <ul class="space-y-3">
 <li class="flex items-start gap-3 text-sm font-body text-text-secondary">
 <span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
-                            Live map dispatch and routing
+                            Despacho y ruteo en mapa en vivo
                         </li>
 <li class="flex items-start gap-3 text-sm font-body text-text-secondary">
 <span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
-                            Automated invoice generation
+                            Generación automática de facturas
                         </li>
 <li class="flex items-start gap-3 text-sm font-body text-text-secondary">
 <span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
-                            Carrier compliance dashboard
+                            Dashboard de cumplimiento de transportistas
                         </li>
 <li class="flex items-start gap-3 text-sm font-body text-text-secondary">
 <span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
-                            Real-time margin analytics
+                            Analítica de margen en tiempo real
                         </li>
 </ul>
 </div>
 <!-- Surface 2 -->
 <div class="bg-surface_container rounded-[24px] p-8 hover:bg-surface_container_high transition-colors duration-300">
 <span class="material-symbols-outlined text-white mb-6 text-3xl">smartphone</span>
-<h3 class="font-headline text-2xl font-bold text-white mb-6">Mobile App</h3>
+<h3 class="font-headline text-2xl font-bold text-white mb-6">App Móvil</h3>
 <div class="mockup-frame phone mb-6">
 <img src="mockups/mobile.png" alt="Driver mobile app showing active load, route from Queen Creek Quarry to SR-202 Site A, and Accept & Start Trip action"/>
 </div>
 <ul class="space-y-3">
 <li class="flex items-start gap-3 text-sm font-body text-text-secondary">
 <span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
-                            One-tap load acceptance
+                            Aceptación de carga con un tap
                         </li>
 <li class="flex items-start gap-3 text-sm font-body text-text-secondary">
 <span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
-                            Geofenced arrival detection
+                            Detección de llegada por geocerca
                         </li>
 <li class="flex items-start gap-3 text-sm font-body text-text-secondary">
 <span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
-                            Digital ticket scanning
+                            Escaneo digital de boletos
                         </li>
 <li class="flex items-start gap-3 text-sm font-body text-text-secondary">
 <span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
-                            Instant earnings visibility
+                            Visibilidad inmediata de ingresos
                         </li>
 </ul>
 </div>
 <!-- Surface 3 -->
 <div class="bg-surface_container rounded-[24px] p-8 hover:bg-surface_container_high transition-colors duration-300">
 <span class="material-symbols-outlined text-white mb-6 text-3xl">admin_panel_settings</span>
-<h3 class="font-headline text-2xl font-bold text-white mb-6">Admin Portal</h3>
+<h3 class="font-headline text-2xl font-bold text-white mb-6">Portal Admin</h3>
 <div class="mockup-frame desktop mb-6">
 <img src="mockups/admin.png" alt="Admin compliance center showing active carriers, expiring certifications, OCR verification queue, and insurance policy monitor"/>
 </div>
 <ul class="space-y-3">
 <li class="flex items-start gap-3 text-sm font-body text-text-secondary">
 <span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
-                            Automated OCR document review
+                            Revisión de documentos con OCR automática
                         </li>
 <li class="flex items-start gap-3 text-sm font-body text-text-secondary">
 <span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
-                            Exception management queue
+                            Cola de gestión de excepciones
                         </li>
 <li class="flex items-start gap-3 text-sm font-body text-text-secondary">
 <span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
-                            Dispute resolution tools
+                            Herramientas de resolución de disputas
                         </li>
 <li class="flex items-start gap-3 text-sm font-body text-text-secondary">
 <span class="material-symbols-outlined text-primary-teal text-[16px] mt-0.5">check</span>
-                            Stripe Connect settlement oversight
+                            Supervisión de liquidaciones Stripe Connect
                         </li>
 </ul>
 </div>
@@ -452,9 +465,9 @@
 <!-- 04 · Architecture of Trust -->
 <section id="compliance" class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
 <div class="space-y-6 max-w-3xl">
-<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 04 · Architecture of Trust</span>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Every truck is verified before it ever moves.</h2>
-<p class="text-text-secondary text-[17px] leading-[1.65]">Carrier onboarding is the chokepoint that breaks when volume scales. The proposed platform runs a compliance engine that verifies documents, scores carriers, and assigns loads without human intervention — so onboarding a new fleet takes hours, not weeks.</p>
+<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 04 · Arquitectura de Confianza</span>
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Cada camión se verifica antes de moverse.</h2>
+<p class="text-text-secondary text-[17px] leading-[1.65]">El onboarding de transportistas es el cuello de botella que se rompe cuando escala el volumen. La plataforma propuesta corre un motor de cumplimiento que verifica documentos, puntúa transportistas y asigna cargas sin intervención humana — para que onboardear una nueva flota tome horas, no semanas.</p>
 </div>
 <!-- Desktop timeline -->
 <div class="relative py-12 hidden lg:block">
@@ -463,78 +476,78 @@
 <div class="flex flex-col items-center gap-4 group">
 <div class="w-16 h-16 rounded-full border-gradient-kapitec flex items-center justify-center font-headline font-extrabold text-xl text-white group-hover:scale-110 transition-transform duration-300">01</div>
 <div class="text-center w-32">
-<h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Carrier Signup</h4>
-<p class="text-[11px] text-text-secondary leading-snug">CDL, insurance, USDOT, W-9</p>
+<h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Registro de Transportista</h4>
+<p class="text-[11px] text-text-secondary leading-snug">CDL, seguro, USDOT, W-9</p>
 </div>
 </div>
 <div class="flex flex-col items-center gap-4 group">
 <div class="w-16 h-16 rounded-full border-gradient-kapitec flex items-center justify-center font-headline font-extrabold text-xl text-white group-hover:scale-110 transition-transform duration-300">02</div>
 <div class="text-center w-32">
-<h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">OCR Verification</h4>
-<p class="text-[11px] text-text-secondary leading-snug">Extract fields, flag expiring docs</p>
+<h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Verificación OCR</h4>
+<p class="text-[11px] text-text-secondary leading-snug">Extracción de campos, alerta de docs por vencer</p>
 </div>
 </div>
 <div class="flex flex-col items-center gap-4 group">
 <div class="w-16 h-16 rounded-full border-gradient-kapitec flex items-center justify-center font-headline font-extrabold text-xl text-white group-hover:scale-110 transition-transform duration-300">03</div>
 <div class="text-center w-32">
-<h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Compliance Score</h4>
-<p class="text-[11px] text-text-secondary leading-snug">FMCSR A–F auto-rating</p>
+<h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Score de Cumplimiento</h4>
+<p class="text-[11px] text-text-secondary leading-snug">Rating FMCSR A–F automático</p>
 </div>
 </div>
 <div class="flex flex-col items-center gap-4 group">
 <div class="w-16 h-16 rounded-full border-gradient-kapitec flex items-center justify-center font-headline font-extrabold text-xl text-white group-hover:scale-110 transition-transform duration-300">04</div>
 <div class="text-center w-32">
-<h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Load Assignment</h4>
-<p class="text-[11px] text-text-secondary leading-snug">Dispatch matching</p>
+<h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Asignación de Carga</h4>
+<p class="text-[11px] text-text-secondary leading-snug">Matching de despacho</p>
 </div>
 </div>
 <div class="flex flex-col items-center gap-4 group">
 <div class="w-16 h-16 rounded-full border-gradient-kapitec flex items-center justify-center font-headline font-extrabold text-xl text-white group-hover:scale-110 transition-transform duration-300">05</div>
 <div class="text-center w-32">
-<h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Geofenced POD</h4>
-<p class="text-[11px] text-text-secondary leading-snug">Auto-capture at job site</p>
+<h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">POD Geocercada</h4>
+<p class="text-[11px] text-text-secondary leading-snug">Captura automática en obra</p>
 </div>
 </div>
 <div class="flex flex-col items-center gap-4 group">
 <div class="w-16 h-16 rounded-full border-gradient-kapitec flex items-center justify-center font-headline font-extrabold text-xl text-white group-hover:scale-110 transition-transform duration-300">06</div>
 <div class="text-center w-32">
-<h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Fast Settlement</h4>
-<p class="text-[11px] text-text-secondary leading-snug">Stripe Connect release</p>
+<h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Liquidación Rápida</h4>
+<p class="text-[11px] text-text-secondary leading-snug">Release Stripe Connect</p>
 </div>
 </div>
 </div>
 </div>
 <!-- Mobile timeline -->
 <div class="lg:hidden space-y-8 pl-16 border-l border-dashed border-white/20 relative">
-<div class="relative"><div class="absolute -left-[68px] w-12 h-12 rounded-full border-gradient-kapitec flex items-center justify-center bg-[#0A1428] font-headline font-extrabold text-sm text-white">01</div><h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Carrier Signup</h4><p class="text-sm text-text-secondary">CDL, insurance, USDOT, W-9</p></div>
-<div class="relative"><div class="absolute -left-[68px] w-12 h-12 rounded-full border-gradient-kapitec flex items-center justify-center bg-[#0A1428] font-headline font-extrabold text-sm text-white">02</div><h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">OCR Verification</h4><p class="text-sm text-text-secondary">Extract fields, flag expiring docs</p></div>
-<div class="relative"><div class="absolute -left-[68px] w-12 h-12 rounded-full border-gradient-kapitec flex items-center justify-center bg-[#0A1428] font-headline font-extrabold text-sm text-white">03</div><h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Compliance Score</h4><p class="text-sm text-text-secondary">FMCSR A–F auto-rating</p></div>
-<div class="relative"><div class="absolute -left-[68px] w-12 h-12 rounded-full border-gradient-kapitec flex items-center justify-center bg-[#0A1428] font-headline font-extrabold text-sm text-white">04</div><h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Load Assignment</h4><p class="text-sm text-text-secondary">Dispatch matching</p></div>
-<div class="relative"><div class="absolute -left-[68px] w-12 h-12 rounded-full border-gradient-kapitec flex items-center justify-center bg-[#0A1428] font-headline font-extrabold text-sm text-white">05</div><h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Geofenced POD</h4><p class="text-sm text-text-secondary">Auto-capture at job site</p></div>
-<div class="relative"><div class="absolute -left-[68px] w-12 h-12 rounded-full border-gradient-kapitec flex items-center justify-center bg-[#0A1428] font-headline font-extrabold text-sm text-white">06</div><h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Fast Settlement</h4><p class="text-sm text-text-secondary">Stripe Connect release</p></div>
+<div class="relative"><div class="absolute -left-[68px] w-12 h-12 rounded-full border-gradient-kapitec flex items-center justify-center bg-[#0A1428] font-headline font-extrabold text-sm text-white">01</div><h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Registro de Transportista</h4><p class="text-sm text-text-secondary">CDL, seguro, USDOT, W-9</p></div>
+<div class="relative"><div class="absolute -left-[68px] w-12 h-12 rounded-full border-gradient-kapitec flex items-center justify-center bg-[#0A1428] font-headline font-extrabold text-sm text-white">02</div><h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Verificación OCR</h4><p class="text-sm text-text-secondary">Extracción de campos, alerta de docs por vencer</p></div>
+<div class="relative"><div class="absolute -left-[68px] w-12 h-12 rounded-full border-gradient-kapitec flex items-center justify-center bg-[#0A1428] font-headline font-extrabold text-sm text-white">03</div><h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Score de Cumplimiento</h4><p class="text-sm text-text-secondary">Rating FMCSR A–F automático</p></div>
+<div class="relative"><div class="absolute -left-[68px] w-12 h-12 rounded-full border-gradient-kapitec flex items-center justify-center bg-[#0A1428] font-headline font-extrabold text-sm text-white">04</div><h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Asignación de Carga</h4><p class="text-sm text-text-secondary">Matching de despacho</p></div>
+<div class="relative"><div class="absolute -left-[68px] w-12 h-12 rounded-full border-gradient-kapitec flex items-center justify-center bg-[#0A1428] font-headline font-extrabold text-sm text-white">05</div><h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">POD Geocercada</h4><p class="text-sm text-text-secondary">Captura automática en obra</p></div>
+<div class="relative"><div class="absolute -left-[68px] w-12 h-12 rounded-full border-gradient-kapitec flex items-center justify-center bg-[#0A1428] font-headline font-extrabold text-sm text-white">06</div><h4 class="font-label text-xs uppercase tracking-[0.12em] text-white mb-1">Liquidación Rápida</h4><p class="text-sm text-text-secondary">Release Stripe Connect</p></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
 <div class="bg-surface_container_lowest p-8 rounded-2xl ghost-border border-l-2" style="border-left-color:#F59E0B">
-<h3 class="font-headline text-2xl font-bold mb-4 text-white">OCR Document Verification</h3>
-<p class="text-text-secondary text-[16px] leading-[1.65]">Every CDL (Class A or B), medical card, CSL $1M insurance certificate, ADOT Form E, and USDOT registration is ingested, field-extracted, and cross-checked against state databases. Documents nearing expiry trigger a renewal workflow 30 days out; anomalies route to a human review queue with a confidence score.</p>
+<h3 class="font-headline text-2xl font-bold mb-4 text-white">Verificación OCR de Documentos</h3>
+<p class="text-text-secondary text-[16px] leading-[1.65]">Cada CDL (Clase A o B), tarjeta médica, certificado de seguro CSL $1M, ADOT Form E y registro USDOT se ingiere, se extraen sus campos y se cruza contra bases de datos estatales. Los documentos próximos a vencer disparan un workflow de renovación 30 días antes; las anomalías se enrutan a una cola de revisión humana con score de confianza.</p>
 </div>
 <div class="bg-surface_container_lowest p-8 rounded-2xl ghost-border">
-<h3 class="font-headline text-2xl font-bold mb-4 text-white">ADOT Form E Integration</h3>
-<p class="text-text-secondary text-[16px] leading-[1.65]">Digital weigh tickets carry GPS timestamps, certified weight from integrated scale systems, and a digital signature that satisfies Arizona DOT audit requirements. Records are retained for 7 years with an immutable audit trail — available for export on demand.</p>
+<h3 class="font-headline text-2xl font-bold mb-4 text-white">Integración ADOT Form E</h3>
+<p class="text-text-secondary text-[16px] leading-[1.65]">Los boletos de pesaje digitales cargan timestamps GPS, peso certificado de básculas integradas y firma digital que satisface los requisitos de auditoría del DOT de Arizona. Los registros se retienen 7 años con un audit trail inmutable — exportable bajo demanda.</p>
 </div>
 </div>
 <!-- Named stack row -->
 <div class="bg-surface_container_low rounded-2xl ghost-border p-8 mt-4">
-<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-4">// Named primitives — production-grade from day one</div>
+<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-4">// Primitivos nombrados — grado producción desde el día uno</div>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-[14px]">
-<div><div class="font-mono text-white font-bold">Mapbox</div><div class="text-text-secondary">Geofencing, routing, ETA</div></div>
-<div><div class="font-mono text-white font-bold">AWS Textract</div><div class="text-text-secondary">Document OCR + field extraction</div></div>
-<div><div class="font-mono text-white font-bold">Stripe Connect</div><div class="text-text-secondary">Merchant onboarding, escrow, payouts</div></div>
-<div><div class="font-mono text-white font-bold">Twilio</div><div class="text-text-secondary">Driver SMS, voice fallbacks</div></div>
-<div><div class="font-mono text-white font-bold">Postgres · RDS</div><div class="text-text-secondary">Transaction ledger, audit trail</div></div>
-<div><div class="font-mono text-white font-bold">React Native</div><div class="text-text-secondary">iOS + Android driver app</div></div>
-<div><div class="font-mono text-white font-bold">Next.js · React</div><div class="text-text-secondary">Web console, admin portal</div></div>
-<div><div class="font-mono text-white font-bold">AWS · Vercel</div><div class="text-text-secondary">Hosting, observability, backups</div></div>
+<div><div class="font-mono text-white font-bold">Mapbox</div><div class="text-text-secondary">Geocercas, ruteo, ETA</div></div>
+<div><div class="font-mono text-white font-bold">AWS Textract</div><div class="text-text-secondary">OCR de documentos + extracción de campos</div></div>
+<div><div class="font-mono text-white font-bold">Stripe Connect</div><div class="text-text-secondary">Onboarding de merchant, escrow, payouts</div></div>
+<div><div class="font-mono text-white font-bold">Twilio</div><div class="text-text-secondary">SMS al conductor, fallback de voz</div></div>
+<div><div class="font-mono text-white font-bold">Postgres · RDS</div><div class="text-text-secondary">Ledger transaccional, audit trail</div></div>
+<div><div class="font-mono text-white font-bold">React Native</div><div class="text-text-secondary">App conductor iOS + Android</div></div>
+<div><div class="font-mono text-white font-bold">Next.js · React</div><div class="text-text-secondary">Consola web, portal admin</div></div>
+<div><div class="font-mono text-white font-bold">AWS · Vercel</div><div class="text-text-secondary">Hosting, observabilidad, backups</div></div>
 </div>
 </div>
 </section>
@@ -542,35 +555,35 @@
 <!-- 05 · Geofencing That Pays For Itself -->
 <section class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
 <div class="space-y-6 max-w-3xl">
-<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 05 · Geofencing That Pays For Itself</span>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">GPS is the foundation of automated compliance and instant POD.</h2>
+<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 05 · Geocerca que se Paga Sola</span>
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">El GPS es la base del cumplimiento automatizado y del POD instantáneo.</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
 <div class="md:col-span-7 space-y-10">
 <div>
 <h3 class="font-headline text-2xl font-bold mb-4 text-white flex items-center gap-3">
 <span class="material-symbols-outlined" style="color:#2367FB;font-variation-settings:'FILL' 1">location_on</span>
-Automated Proof of Delivery
+Prueba de Entrega Automática
 </h3>
-<p class="text-text-secondary text-[17px] leading-[1.65]">A geofence around each job site and quarry lets the system auto-capture entry and exit events. No driver app-tap required. The POD record is created server-side from GPS + weight + timestamp — tamper-evident by construction. This eliminates the #1 source of billing disputes: what the quarry recorded vs. what the job site received.</p>
+<p class="text-text-secondary text-[17px] leading-[1.65]">Una geocerca alrededor de cada obra y cantera permite al sistema capturar automáticamente eventos de entrada y salida. No se requiere tap del conductor. El registro POD se crea del lado del servidor a partir de GPS + peso + timestamp — a prueba de manipulación por diseño. Esto elimina la fuente #1 de disputas de facturación: lo que la cantera registró vs. lo que la obra recibió.</p>
 </div>
 <div>
 <h3 class="font-headline text-2xl font-bold mb-4 text-white flex items-center gap-3">
 <span class="material-symbols-outlined" style="color:#2DD2A1;font-variation-settings:'FILL' 1">monitoring</span>
-Load Cycle Analytics
+Analítica de Ciclo de Carga
 </h3>
-<p class="text-text-secondary text-[17px] leading-[1.65]">Every completed cycle — quarry, job site, return leg — is a data point. Dwell time anomalies surface carrier performance and quarry bottlenecks so dispatch can reroute in real time instead of waiting for a weekly report.</p>
+<p class="text-text-secondary text-[17px] leading-[1.65]">Cada ciclo completo — cantera, obra, tramo de regreso — es un data point. Las anomalías de dwell time afloran el desempeño del transportista y los cuellos de botella de cantera para que despacho pueda rerutear en tiempo real, en vez de esperar un reporte semanal.</p>
 </div>
 </div>
 <div class="md:col-span-5 relative">
 <div class="absolute inset-0 bg-[#F59E0B]/10 blur-[100px] rounded-full z-0 pointer-events-none"></div>
 <div class="bg-surface_container_lowest p-10 rounded-[24px] ghost-border relative z-10 flex flex-col justify-between min-h-[360px]" style="border-top:2px solid #F59E0B">
-<span class="font-label text-xs uppercase tracking-[0.12em] font-bold self-start px-3 py-1 rounded-full" style="color:#F59E0B;background:rgba(245,158,11,0.1)">HIGH-IMPACT</span>
+<span class="font-label text-xs uppercase tracking-[0.12em] font-bold self-start px-3 py-1 rounded-full" style="color:#F59E0B;background:rgba(245,158,11,0.1)">ALTO IMPACTO</span>
 <div class="my-8">
 <div class="font-mono text-[80px] font-bold leading-none mb-2" style="color:#F59E0B">20%</div>
-<div class="font-label text-sm uppercase tracking-[0.12em] text-white">Target reduction in crew downtime</div>
+<div class="font-label text-sm uppercase tracking-[0.12em] text-white">Reducción objetivo en tiempo muerto de cuadrilla</div>
 </div>
-<p class="text-text-secondary text-[15px] leading-[1.6] border-t border-white/5 pt-6 mt-auto">For a 5-crew operation idle at $150/hour, the conservative estimate is <span class="font-mono text-white">~$1.2M</span> in recovered productivity annually — before any carrier payment or dispatch gains.</p>
+<p class="text-text-secondary text-[15px] leading-[1.6] border-t border-white/5 pt-6 mt-auto">Para una operación de 5 cuadrillas detenidas a $150/hora, el estimado conservador es <span class="font-mono text-white">~$1.2M</span> anuales de productividad recuperada — antes de cualquier ganancia en pago a transportistas o despacho.</p>
 </div>
 </div>
 </div>
@@ -580,42 +593,42 @@ Load Cycle Analytics
 <section id="payments" class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16 relative">
 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] shadow-glow z-0 pointer-events-none"></div>
 <div class="space-y-6 max-w-3xl relative z-10">
-<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 06 · Fast Pay Differentiator</span>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Speed of payment is the new retention tool.</h2>
-<p class="text-text-secondary text-[17px] leading-[1.65]">In a labor-scarce market, drivers go where they get paid fastest. Stripe Connect enables same-day and next-day settlement — turning the financial operation into a recruiting asset for carriers.</p>
+<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 06 · Diferenciador de Pago Rápido</span>
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">La velocidad de pago es la nueva herramienta de retención.</h2>
+<p class="text-text-secondary text-[17px] leading-[1.65]">En un mercado con escasez de choferes, los conductores van donde les pagan más rápido. Stripe Connect habilita liquidación el mismo día o al día siguiente — convirtiendo la operación financiera en un activo de reclutamiento para transportistas.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
 <div class="bg-surface_container_lowest p-8 rounded-2xl ghost-border hover:bg-surface_container_low transition-colors duration-300">
 <span class="material-symbols-outlined text-3xl mb-6" style="color:#2367FB;font-variation-settings:'FILL' 1">bolt</span>
-<h3 class="font-headline text-xl font-bold mb-3 text-white">Same-Day Settlement</h3>
-<p class="text-text-secondary text-sm leading-[1.6]">Funds hit the carrier bank the same day POD is GPS-verified. No weekly batch, no manual release.</p>
+<h3 class="font-headline text-xl font-bold mb-3 text-white">Liquidación el Mismo Día</h3>
+<p class="text-text-secondary text-sm leading-[1.6]">Los fondos entran al banco del transportista el mismo día que el POD se verifica por GPS. Sin batch semanal, sin release manual.</p>
 </div>
 <div class="bg-surface_container_lowest p-8 rounded-2xl ghost-border hover:bg-surface_container_low transition-colors duration-300">
 <span class="material-symbols-outlined text-3xl mb-6" style="color:#2DD2A1;font-variation-settings:'FILL' 1">credit_card</span>
-<h3 class="font-headline text-xl font-bold mb-3 text-white">Stripe Connect Escrow</h3>
-<p class="text-text-secondary text-sm leading-[1.6]">Platform holds payout in escrow until POD is confirmed. Dispute window auto-closes after 48 hours. Constructors pay net-15.</p>
+<h3 class="font-headline text-xl font-bold mb-3 text-white">Escrow Stripe Connect</h3>
+<p class="text-text-secondary text-sm leading-[1.6]">La plataforma retiene el pago en escrow hasta que se confirme el POD. La ventana de disputa se cierra en automático tras 48 horas. Los constructores pagan a net-15.</p>
 </div>
 <div class="bg-surface_container_lowest p-8 rounded-2xl ghost-border hover:bg-surface_container_low transition-colors duration-300">
 <span class="material-symbols-outlined text-3xl mb-6" style="color:#F59E0B;font-variation-settings:'FILL' 1">trending_up</span>
-<h3 class="font-headline text-xl font-bold mb-3 text-white">Earned Wage Access</h3>
-<p class="text-text-secondary text-sm leading-[1.6]">Drivers can draw up to 80% of completed-but-unpaid earnings on demand. Opt-in and optional.</p>
+<h3 class="font-headline text-xl font-bold mb-3 text-white">Acceso a Salario Devengado</h3>
+<p class="text-text-secondary text-sm leading-[1.6]">Los conductores pueden cobrar hasta 80% de los ingresos completados-no-pagados bajo demanda. Opt-in y opcional.</p>
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 relative z-10">
 <div class="bg-surface_container_lowest/50 p-8 rounded-2xl ghost-border flex items-center justify-between opacity-70">
 <div>
-<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-2">Traditional Model</div>
+<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-2">Modelo Tradicional</div>
 <div class="font-mono text-3xl font-bold text-text-secondary">Net 60</div>
-<div class="text-xs text-text-muted mt-2">Invoice → AP approval → payment run → bank days</div>
+<div class="text-xs text-text-muted mt-2">Factura → aprobación AP → corrida de pagos → días bancarios</div>
 </div>
 <span class="material-symbols-outlined text-text-muted text-4xl">hourglass_empty</span>
 </div>
 <div class="p-8 rounded-2xl border-gradient-kapitec shadow-glow flex items-center justify-between relative overflow-hidden">
 <div class="absolute inset-0 bg-gradient-kapitec opacity-[0.08]"></div>
 <div class="relative z-10">
-<div class="font-label text-xs uppercase tracking-[0.12em] mb-2 text-gradient font-bold">Kapitec Platform</div>
-<div class="font-mono text-3xl font-extrabold text-white flex items-baseline gap-2">24 <span class="text-xl text-text-secondary font-body font-normal">hours</span></div>
-<div class="text-xs text-text-secondary mt-2">POD verified → escrow released → carrier wallet</div>
+<div class="font-label text-xs uppercase tracking-[0.12em] mb-2 text-gradient font-bold">Plataforma Kapitec</div>
+<div class="font-mono text-3xl font-extrabold text-white flex items-baseline gap-2">24 <span class="text-xl text-text-secondary font-body font-normal">horas</span></div>
+<div class="text-xs text-text-secondary mt-2">POD verificado → escrow liberado → wallet del transportista</div>
 </div>
 <span class="material-symbols-outlined text-4xl relative z-10" style="color:#2DD2A1;font-variation-settings:'FILL' 1">check_circle</span>
 </div>
@@ -625,124 +638,124 @@ Load Cycle Analytics
 <!-- 07 · Market & Comparables -->
 <section class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
 <div class="space-y-6 max-w-3xl">
-<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 07 · Market & Comparables</span>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">What Uber could not do, and who already did it.</h2>
-<p class="text-text-secondary text-[17px] leading-[1.65]">The Uber model broke when applied naively to regulated freight — the original assumption was that drivers are gig workers, and they are not. Heavy haul carriers carry CDLs, $1M CSL insurance, ADOT filings, and DOT compliance obligations. What works is a marketplace with a verification layer built into the platform. The thesis has been validated by regional players; none of them operate in Phoenix.</p>
+<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 07 · Mercado y Comparables</span>
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Lo que Uber no pudo hacer, y quién ya lo hizo.</h2>
+<p class="text-text-secondary text-[17px] leading-[1.65]">El modelo Uber se rompió cuando se aplicó de forma ingenua al freight regulado — el supuesto original era que los conductores son trabajadores gig, y no lo son. Los transportistas pesados cargan CDLs, seguro CSL $1M, ADOT filings y obligaciones de cumplimiento DOT. Lo que funciona es un marketplace con capa de verificación integrada a la plataforma. La tesis ya fue validada por jugadores regionales; ninguno opera en Phoenix.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
 <div class="bg-surface_container_lowest rounded-2xl ghost-border p-6 flex flex-col gap-3 min-h-[280px]">
-<div class="font-label text-[10px] uppercase tracking-[0.12em] text-text-muted">Competitor</div>
+<div class="font-label text-[10px] uppercase tracking-[0.12em] text-text-muted">Competidor</div>
 <div class="font-headline font-extrabold text-xl text-white">Uber Freight</div>
-<p class="text-text-secondary text-sm leading-[1.55] flex-grow">Long-haul OTR freight for enterprise shippers. Built for national logistics, not local aggregate. No Arizona-specific compliance layer. No fit.</p>
-<div class="font-mono text-[11px] text-text-muted">Scope: national · Segment: OTR enterprise</div>
+<p class="text-text-secondary text-sm leading-[1.55] flex-grow">Freight OTR long-haul para shippers corporativos. Construido para logística nacional, no agregados locales. Sin capa de cumplimiento específica para Arizona. No aplica.</p>
+<div class="font-mono text-[11px] text-text-muted">Alcance: nacional · Segmento: OTR corporativo</div>
 </div>
 <div class="bg-surface_container_lowest rounded-2xl ghost-border p-6 flex flex-col gap-3 min-h-[280px]">
-<div class="font-label text-[10px] uppercase tracking-[0.12em] text-text-muted">Precedent</div>
+<div class="font-label text-[10px] uppercase tracking-[0.12em] text-text-muted">Precedente</div>
 <div class="font-headline font-extrabold text-xl text-white">Iron Sheepdog</div>
-<p class="text-text-secondary text-sm leading-[1.55] flex-grow">The proof point. Aggregate transport marketplace operating in the Southeast US (Carolinas, Georgia, Virginia). Validates the thesis at scale. Not in Phoenix. Not built for Arizona's regulatory footprint.</p>
-<div class="font-mono text-[11px] text-text-muted">Scope: Southeast US · Segment: Aggregate</div>
+<p class="text-text-secondary text-sm leading-[1.55] flex-grow">El proof point. Marketplace de transporte de agregados operando en el sureste de EE. UU. (Carolinas, Georgia, Virginia). Valida la tesis a escala. No está en Phoenix. No construido para la huella regulatoria de Arizona.</p>
+<div class="font-mono text-[11px] text-text-muted">Alcance: sureste EE. UU. · Segmento: Agregados</div>
 </div>
 <div class="bg-surface_container_lowest rounded-2xl ghost-border p-6 flex flex-col gap-3 min-h-[280px]">
-<div class="font-label text-[10px] uppercase tracking-[0.12em] text-text-muted">Precedent</div>
+<div class="font-label text-[10px] uppercase tracking-[0.12em] text-text-muted">Precedente</div>
 <div class="font-headline font-extrabold text-xl text-white">Trux</div>
-<p class="text-text-secondary text-sm leading-[1.55] flex-grow">Construction freight platform concentrated in the Northeast. Similar thesis, different geography and regulation. Second proof the model works. No Phoenix presence.</p>
-<div class="font-mono text-[11px] text-text-muted">Scope: Northeast US · Segment: Construction</div>
+<p class="text-text-secondary text-sm leading-[1.55] flex-grow">Plataforma de freight de construcción concentrada en el noreste. Tesis similar, geografía y regulación distintas. Segundo proof de que el modelo funciona. Sin presencia en Phoenix.</p>
+<div class="font-mono text-[11px] text-text-muted">Alcance: noreste EE. UU. · Segmento: Construcción</div>
 </div>
 <div class="bg-surface_container_lowest rounded-2xl p-6 flex flex-col gap-3 min-h-[280px] border-gradient-kapitec">
-<div class="font-label text-[10px] uppercase tracking-[0.12em] font-bold text-gradient">This Proposal</div>
+<div class="font-label text-[10px] uppercase tracking-[0.12em] font-bold text-gradient">Esta Propuesta</div>
 <div class="font-headline font-extrabold text-xl text-white">Kapitec × Phoenix</div>
-<p class="text-text-secondary text-sm leading-[1.55] flex-grow">Arizona-native: ADOT Form E + FMCSA built in, not bolted on. Stripe Connect fast-pay as the carrier-retention lever. Lean, boutique team — no ad-ops theater, no national distractions.</p>
-<div class="font-mono text-[11px] text-gradient">Scope: Phoenix metro · Segment: Aggregate + construction</div>
+<p class="text-text-secondary text-sm leading-[1.55] flex-grow">Nativo de Arizona: ADOT Form E + FMCSA integrados, no atornillados. Pago rápido con Stripe Connect como palanca de retención de transportistas. Equipo boutique y ágil — sin teatro de ad-ops, sin distracciones nacionales.</p>
+<div class="font-mono text-[11px] text-gradient">Alcance: Phoenix metro · Segmento: Agregados + construcción</div>
 </div>
 </div>
 <div class="bg-surface_container_low rounded-2xl ghost-border p-8 max-w-3xl">
-<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-3">// Why the window is open</div>
-<p class="text-text-secondary text-[16px] leading-[1.65]">The thesis is not unproven — Iron Sheepdog and Trux removed the category risk. What is unsolved is Phoenix. The two incumbents are regional operators whose expansion priorities are adjacent geographies, not Arizona. The time to own Phoenix is before they decide to fly west.</p>
+<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-3">// Por qué la ventana está abierta</div>
+<p class="text-text-secondary text-[16px] leading-[1.65]">La tesis no está sin probar — Iron Sheepdog y Trux ya removieron el riesgo de categoría. Lo que está sin resolver es Phoenix. Los dos incumbentes son operadores regionales cuyas prioridades de expansión son geografías adyacentes, no Arizona. El momento para adueñarse de Phoenix es antes de que decidan volar hacia el oeste.</p>
 </div>
 </section>
 
 <!-- 08 · Roadmap -->
 <section id="roadmap" class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
 <div class="space-y-6 max-w-3xl">
-<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 08 · Roadmap</span>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Three months to a live, production-grade platform.</h2>
-<p class="text-text-secondary text-[17px] leading-[1.65]">The delivery window is three months end-to-end — from kickoff to the first carrier getting paid through the platform in production. Kapitec's AI-accelerated engineering compresses the build itself; the remaining time goes to client-side onboarding, Arizona regulatory validation, pilot carrier recruitment, and the calm operational ramp that a freight network needs. Nothing is rushed. Nothing is padded.</p>
+<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 08 · Hoja de Ruta</span>
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Tres meses para una plataforma viva, en grado producción.</h2>
+<p class="text-text-secondary text-[17px] leading-[1.65]">La ventana de entrega es de tres meses end-to-end — desde el kickoff hasta que el primer transportista cobra a través de la plataforma en producción. La ingeniería acelerada por IA de Kapitec comprime la construcción en sí; el tiempo restante se reparte en onboarding del lado del cliente, validación regulatoria en Arizona, reclutamiento de transportistas piloto y la rampa operativa calmada que una red de freight necesita. Nada a las carreras. Nada inflado.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 <div class="bg-surface_container_lowest rounded-2xl ghost-border p-10 flex flex-col gap-6">
 <div class="font-headline font-extrabold text-[88px] leading-none text-gradient">01</div>
 <div>
-<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-2">Phase · Foundation</div>
-<span class="inline-block font-mono text-sm font-bold px-3 py-1 rounded-full" style="color:#F59E0B;background:rgba(245,158,11,0.12)">Month 1</span>
+<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-2">Fase · Fundación</div>
+<span class="inline-block font-mono text-sm font-bold px-3 py-1 rounded-full" style="color:#F59E0B;background:rgba(245,158,11,0.12)">Mes 1</span>
 </div>
 <ul class="space-y-3 mt-4">
-<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Digital ticketing (quarry → job site)</li>
-<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>GPS truck tracking and geofencing</li>
-<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>CDL / insurance OCR verification engine</li>
-<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>ADOT Form E integration</li>
-<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Pilot carriers and constructor onboarded</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Ticketing digital (cantera → obra)</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Tracking GPS de camiones y geocercas</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Motor OCR de verificación CDL / seguro</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Integración ADOT Form E</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Transportistas piloto y constructor onboardeados</li>
 </ul>
 </div>
 <div class="bg-surface_container_lowest rounded-2xl ghost-border p-10 flex flex-col gap-6">
 <div class="font-headline font-extrabold text-[88px] leading-none text-gradient">02</div>
 <div>
-<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-2">Phase · Payments</div>
-<span class="inline-block font-mono text-sm font-bold px-3 py-1 rounded-full" style="color:#F59E0B;background:rgba(245,158,11,0.12)">Month 2</span>
+<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-2">Fase · Pagos</div>
+<span class="inline-block font-mono text-sm font-bold px-3 py-1 rounded-full" style="color:#F59E0B;background:rgba(245,158,11,0.12)">Mes 2</span>
 </div>
 <ul class="space-y-3 mt-4">
-<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Stripe Connect merchant onboarding</li>
-<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Next-day payment automation</li>
-<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Automated insurance expiry monitoring</li>
-<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Load matching algorithm v1</li>
-<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Carrier performance scorecards</li>
-<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Invoice reconciliation engine</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Onboarding merchant Stripe Connect</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Automatización de pago al día siguiente</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Monitoreo automático de vencimiento de seguros</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Algoritmo de matching de cargas v1</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Scorecards de desempeño de transportistas</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Motor de conciliación de facturas</li>
 </ul>
 </div>
 <div class="bg-surface_container_lowest rounded-2xl ghost-border p-10 flex flex-col gap-6">
 <div class="font-headline font-extrabold text-[88px] leading-none text-gradient">03</div>
 <div>
-<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-2">Phase · Intelligence & Launch</div>
-<span class="inline-block font-mono text-sm font-bold px-3 py-1 rounded-full" style="color:#F59E0B;background:rgba(245,158,11,0.12)">Month 3</span>
+<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-2">Fase · Inteligencia y Lanzamiento</div>
+<span class="inline-block font-mono text-sm font-bold px-3 py-1 rounded-full" style="color:#F59E0B;background:rgba(245,158,11,0.12)">Mes 3</span>
 </div>
 <ul class="space-y-3 mt-4">
-<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Route optimization and wait-time prediction</li>
-<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Dynamic pricing engine (supply / demand)</li>
-<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Quarry capacity API integrations</li>
-<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Multi-project dispatch for general contractors</li>
-<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>BI dashboard for CFO-level reporting</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Optimización de rutas y predicción de tiempos de espera</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Motor de pricing dinámico (oferta / demanda)</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Integraciones API de capacidad de canteras</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Despacho multi-proyecto para contratistas generales</li>
+<li class="flex items-start gap-3 text-sm text-text-secondary"><span class="material-symbols-outlined" style="color:#2DD2A1;font-size:16px">check</span>Dashboard BI para reporteo a nivel CFO</li>
 </ul>
 </div>
 </div>
-<p class="text-text-muted text-sm italic max-w-3xl">Engineering velocity on the Kapitec AI stack lets us compress the build itself to days, not quarters. The three-month window covers the full end-to-end: kickoff, build, pilot carrier onboarding, Arizona regulatory validation, and the live operational ramp to paying loads.</p>
+<p class="text-text-muted text-sm italic max-w-3xl">La velocidad de ingeniería sobre el stack AI de Kapitec nos permite comprimir la construcción en sí a días, no trimestres. La ventana de tres meses cubre el end-to-end completo: kickoff, construcción, onboarding de transportistas piloto, validación regulatoria en Arizona y la rampa operativa en vivo hasta cargas pagadas.</p>
 </section>
 
 <!-- 09 · Why Kapitec -->
 <section id="credentials" class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
 <div class="space-y-6 max-w-3xl">
-<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 09 · Why Kapitec</span>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Twenty years building software that stays running.</h2>
-<p class="text-text-secondary text-[17px] leading-[1.65]">Kapitec Soluciones has been shipping production systems since 2006. Our work sits behind operations on both sides of the border — heavy construction supply chains, multi-entity contractors, dispatch floors in Mexico and the United States. We are a boutique firm by design: small team, long tenures, clients measured in decades, not quarters.</p>
-<p class="text-text-secondary text-[17px] leading-[1.65]">Most of what we build sits inside our clients' operations, not in their marketing — the systems run every day but rarely carry a logo. The construction work specifically covers aggregate transport back-offices, supplier reconciliation, multi-site dispatch, and compliance workflows tuned to each country's regulatory environment (CFDI + SAT in Mexico, FMCSA + state DOTs in the US). We have built every primitive this proposal needs before — just never assembled under one Phoenix-focused platform.</p>
+<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 09 · Por Qué Kapitec</span>
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Veinte años construyendo software que sigue corriendo.</h2>
+<p class="text-text-secondary text-[17px] leading-[1.65]">Kapitec Soluciones lleva desde 2006 enviando sistemas en producción. Nuestro trabajo está detrás de operaciones a ambos lados de la frontera — cadenas de suministro de construcción pesada, contratistas multi-entidad, pisos de despacho en México y Estados Unidos. Somos una firma boutique por diseño: equipo pequeño, tenencias largas, clientes medidos en décadas, no en trimestres.</p>
+<p class="text-text-secondary text-[17px] leading-[1.65]">La mayor parte de lo que construimos vive dentro de la operación de nuestros clientes, no en su marketing — los sistemas corren todos los días pero rara vez llevan un logo. El trabajo en construcción específicamente cubre back-offices de transporte de agregados, conciliación con proveedores, despacho multi-sitio y workflows de cumplimiento afinados al entorno regulatorio de cada país (CFDI + SAT en México, FMCSA + DOTs estatales en EE. UU.). Ya hemos construido cada primitivo que necesita esta propuesta — solo que nunca ensamblados bajo una sola plataforma enfocada en Phoenix.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <div class="bg-surface_container_lowest rounded-2xl ghost-border p-8 space-y-3">
-<div class="font-mono text-4xl font-bold text-gradient">20 yrs</div>
-<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted">Continuous operation</div>
-<p class="text-text-secondary text-sm leading-[1.6]">Kapi — the company's flagship retail operating system — has been live with paying customers since 2006. Still deployed. Still shipping updates.</p>
+<div class="font-mono text-4xl font-bold text-gradient">20 años</div>
+<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted">Operación continua</div>
+<p class="text-text-secondary text-sm leading-[1.6]">Kapi — el sistema operativo retail insignia de la empresa — está en vivo con clientes pagando desde 2006. Sigue desplegado. Sigue enviando actualizaciones.</p>
 </div>
 <div class="bg-surface_container_lowest rounded-2xl ghost-border p-8 space-y-3">
 <div class="font-mono text-4xl font-bold text-gradient">MX + USA</div>
-<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted">Construction experience</div>
-<p class="text-text-secondary text-sm leading-[1.6]">Operating back-offices for construction and supplier networks across Mexican and US builders. Regulatory work on both sides (CFDI, SAT, FMCSA, ADOT, state DOTs).</p>
+<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted">Experiencia en construcción</div>
+<p class="text-text-secondary text-sm leading-[1.6]">Back-offices en producción para redes de construcción y proveedores de constructoras mexicanas y estadounidenses. Trabajo regulatorio en ambos lados (CFDI, SAT, FMCSA, ADOT, DOTs estatales).</p>
 </div>
 <div class="bg-surface_container_lowest rounded-2xl ghost-border p-8 space-y-3">
 <div class="font-mono text-4xl font-bold text-gradient">100%</div>
-<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted">Ownership of the stack</div>
-<p class="text-text-secondary text-sm leading-[1.6]">We design, build, deploy, and operate. No subcontracted back-end, no black-box vendors under the hood. What we ship, we run.</p>
+<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted">Dueños del stack</div>
+<p class="text-text-secondary text-sm leading-[1.6]">Diseñamos, construimos, desplegamos y operamos. Sin back-end subcontratado, sin vendors black-box bajo el capó. Lo que enviamos, lo corremos.</p>
 </div>
 </div>
 <div class="pt-4">
-<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-4">Public-facing Kapitec properties</div>
+<div class="font-label text-xs uppercase tracking-[0.12em] text-text-muted mb-4">Propiedades públicas de Kapitec</div>
 <div class="flex flex-wrap gap-x-8 gap-y-3 text-text-secondary text-sm">
 <a href="https://kapi.mx/" target="_blank" rel="noopener" class="hover:text-white transition-colors"><span class="font-mono">kapi.mx</span> <span class="text-text-muted">→</span></a>
 <a href="https://kapitec.pro/" target="_blank" rel="noopener" class="hover:text-white transition-colors"><span class="font-mono">kapitec.pro</span> <span class="text-text-muted">→</span></a>
@@ -756,15 +769,15 @@ Load Cycle Analytics
 <!-- 10 · Conclusion -->
 <section class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
 <div class="space-y-6 max-w-3xl">
-<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 10 · Conclusion</span>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Not an app. Infrastructure.</h2>
+<span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 10 · Conclusión</span>
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">No es una app. Es infraestructura.</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl">
-<p class="text-text-secondary text-[17px] leading-[1.65]">Phoenix represents a structural — not incremental — opportunity. The scale of the current build (TSMC Fab 1 and 2, Intel Ocotillo, I-10 widening, SR-202 extensions), the regulatory tailwind (ADOT Form E, FMCSA ELD), and the absence of a dominant digital incumbent align maybe once a decade. Whoever builds the trusted infrastructure for aggregate transport in Phoenix defines how that market operates for the next fifteen years.</p>
-<p class="text-text-secondary text-[17px] leading-[1.65]">The technical recommendation is to prioritize scale-integrated weigh data and insurance compliance on day one — these are the highest-friction points preventing efficient collaboration between carriers and constructors today. Route optimization compounds on top of that foundation; it is not a substitute for it. The AI work we do is invisible by design: a facilitator that lets constructors focus on building and drivers focus on driving.</p>
+<p class="text-text-secondary text-[17px] leading-[1.65]">Phoenix representa una oportunidad estructural — no incremental. La escala del build actual (TSMC Fab 1 y 2, Intel Ocotillo, ensanche I-10, extensiones SR-202), el tailwind regulatorio (ADOT Form E, FMCSA ELD) y la ausencia de un incumbente digital dominante se alinean quizá una vez por década. Quien construya la infraestructura de confianza para el transporte de agregados en Phoenix define cómo opera ese mercado durante los próximos quince años.</p>
+<p class="text-text-secondary text-[17px] leading-[1.65]">La recomendación técnica es priorizar desde el día uno los datos integrados de báscula y el cumplimiento de seguros — son los puntos de mayor fricción que hoy impiden la colaboración eficiente entre transportistas y constructores. La optimización de rutas se acumula sobre esa base; no la sustituye. El trabajo de IA que hacemos es invisible por diseño: un facilitador que permite a los constructores enfocarse en construir y a los conductores en conducir.</p>
 </div>
 <div class="max-w-4xl mx-auto text-center py-12 border-t border-b border-white/5 my-8">
-<p class="font-headline italic text-2xl md:text-3xl leading-[1.4] text-white">"Technology is the invisible enabler. Constructors focus on building. Drivers focus on driving. Administrative friction is what we remove — permanently."</p>
+<p class="font-headline italic text-2xl md:text-3xl leading-[1.4] text-white">"La tecnología es el facilitador invisible. Los constructores se enfocan en construir. Los conductores en conducir. La fricción administrativa es lo que removemos — permanentemente."</p>
 </div>
 </section>
 
@@ -772,22 +785,22 @@ Load Cycle Analytics
 <section id="contact" class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5">
 <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-start">
 <div class="md:col-span-3 space-y-6">
-<h2 class="font-headline text-3xl md:text-[44px] leading-[1.1] tracking-[-0.02em] font-extrabold">Walk me through the numbers for __CLIENT_NAME__'s operation.</h2>
-<p class="text-text-secondary text-[17px] leading-[1.65]">A 30-minute working session. I'll bring a live walkthrough of the platform mapped to real Phoenix routes, run the compliance engine against a sample Arizona CDL, and sketch the day-one integration plan. No slides — only real screens.</p>
+<h2 class="font-headline text-[26px] sm:text-3xl md:text-[44px] leading-[1.1] tracking-[-0.02em] font-extrabold">Recórranme los números para la operación de __CLIENT_NAME__.</h2>
+<p class="text-text-secondary text-[17px] leading-[1.65]">Una sesión de trabajo de 30 minutos. Les llevo un walkthrough en vivo de la plataforma mapeada a rutas reales de Phoenix, corro el motor de cumplimiento contra un CDL de muestra de Arizona y esbozo el plan de integración del día uno. Sin slides — solo pantallas reales.</p>
 <div class="pt-4 space-y-2 text-sm text-text-muted font-label tracking-wider uppercase">
 <div>Javier Enríquez · Kapitec Soluciones</div>
-<div>Guadalajara, Mexico · <span class="font-mono normal-case">+52 662 105 0329</span></div>
+<div>Guadalajara, México · <span class="font-mono normal-case">+52 662 105 0329</span></div>
 <div class="normal-case tracking-normal font-body text-text-secondary"><a href="mailto:info@kapitec.pro" class="hover:text-white transition-colors">info@kapitec.pro</a></div>
 </div>
 </div>
 <div class="md:col-span-2 space-y-4">
 <a href="https://wa.me/526621050329?text=__WA_BODY_ENCODED__" target="_blank" rel="noopener" class="btn-gradient w-full h-[56px] rounded-lg text-white font-label text-sm uppercase tracking-wider inline-flex items-center justify-center gap-3">
 <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.66 4.06 1.79 5.7L2 22l4.54-1.87a9.88 9.88 0 0 0 5.5 1.67h.01c5.46 0 9.9-4.45 9.91-9.91a9.9 9.9 0 0 0-9.92-9.89Zm5.79 14.15c-.24.67-1.42 1.28-1.99 1.32-.52.04-1.13.22-3.83-.85-3.22-1.28-5.27-4.58-5.43-4.79-.16-.21-1.31-1.73-1.31-3.3 0-1.57.82-2.34 1.11-2.66.29-.32.64-.4.85-.4.21 0 .42.01.6.02.2.01.47-.07.73.55.27.65.92 2.26 1 2.42.08.16.13.36.03.57-.1.21-.15.34-.3.52-.15.18-.31.4-.44.54-.15.15-.3.31-.13.61.17.3.77 1.28 1.65 2.08 1.14 1.02 2.1 1.34 2.41 1.49.31.16.49.13.67-.08.18-.21.78-.91.99-1.22.21-.31.41-.26.7-.15.28.1 1.78.84 2.08.99.31.16.51.23.59.37.08.14.08.81-.16 1.48Z"/></svg>
-WhatsApp Javi Now — +52 662 105 0329
+WhatsApp a Javi — +52 662 105 0329
 </a>
-<a href="mailto:info@kapitec.pro?subject=__EMAIL_SUBJECT_ENCODED__&body=Hi%20Javier%2C%0A%0AWe%20reviewed%20the%20proposal%20and%20would%20like%20to%20schedule%20a%20session." class="ghost-border w-full h-[56px] rounded-lg text-white font-label text-sm uppercase tracking-wider hover:bg-white/5 transition-colors inline-flex items-center justify-center gap-3">
+<a href="mailto:info@kapitec.pro?subject=__EMAIL_SUBJECT_ENCODED__&body=Hola%20Javier%2C%0A%0ARevisamos%20la%20propuesta%20y%20nos%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n." class="ghost-border w-full h-[56px] rounded-lg text-white font-label text-sm uppercase tracking-wider hover:bg-white/5 transition-colors inline-flex items-center justify-center gap-3">
 <span class="material-symbols-outlined" style="font-size:20px;color:#2DD2A1">mail</span>
-Schedule via email
+Agendar por email
 </a>
 </div>
 </div>
@@ -808,12 +821,12 @@ Schedule via email
 </div>
 </div>
 <p class="text-[#6F7E95] font-body text-sm mt-8 border-t border-white/5 pt-8">
-© 2006–2026 Kapitec Soluciones S.A.P.I. de C.V. · Javier Enríquez · Guadalajara, Mexico · +52 662 105 0329
+© 2006–2026 Kapitec Soluciones S.A.P.I. de C.V. · Javier Enríquez · Guadalajara, México · +52 662 105 0329
 </p>
 </div>
 </footer>
 </main>
-<a href="https://wa.me/526621050329?text=__WA_BODY_ENCODED__" target="_blank" rel="noopener" aria-label="Message Javier on WhatsApp" class="wa-fab" title="Message Javier on WhatsApp">
+<a href="https://wa.me/526621050329?text=__WA_BODY_ENCODED__" target="_blank" rel="noopener" aria-label="Escríbele a Javier por WhatsApp" class="wa-fab" title="Escríbele a Javier por WhatsApp">
 <svg viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.66 4.06 1.79 5.7L2 22l4.54-1.87a9.88 9.88 0 0 0 5.5 1.67h.01c5.46 0 9.9-4.45 9.91-9.91a9.9 9.9 0 0 0-9.92-9.89Zm5.79 14.15c-.24.67-1.42 1.28-1.99 1.32-.52.04-1.13.22-3.83-.85-3.22-1.28-5.27-4.58-5.43-4.79-.16-.21-1.31-1.73-1.31-3.3 0-1.57.82-2.34 1.11-2.66.29-.32.64-.4.85-.4.21 0 .42.01.6.02.2.01.47-.07.73.55.27.65.92 2.26 1 2.42.08.16.13.36.03.57-.1.21-.15.34-.3.52-.15.18-.31.4-.44.54-.15.15-.3.31-.13.61.17.3.77 1.28 1.65 2.08 1.14 1.02 2.1 1.34 2.41 1.49.31.16.49.13.67-.08.18-.21.78-.91.99-1.22.21-.31.41-.26.7-.15.28.1 1.78.84 2.08.99.31.16.51.23.59.37.08.14.08.81-.16 1.48Z"/></svg>
 </a>
 </body></html>

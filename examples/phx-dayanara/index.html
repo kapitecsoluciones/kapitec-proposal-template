@@ -91,11 +91,24 @@
         }
     </script>
 <style>
-        body {
+        html, body {
             background-color: #070E1D;
             color: #F1F5F9;
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        /* Contain decorative absolute-positioned elements so they don't cause
+           horizontal scroll on small viewports. */
+        main > section { overflow-x: clip; }
+
+        /* Clamp stray wide decorative elements on mobile */
+        @media (max-width: 767px) {
+            .w-\[600px\], .w-\[800px\] { max-width: 100vw !important; }
+            .h-\[600px\] { height: 60vw !important; }
+            .h-\[400px\] { height: 40vw !important; }
         }
 
         .text-gradient {
@@ -235,7 +248,7 @@
 <p class="font-label text-text-muted text-xs uppercase tracking-[0.12em] mb-8">
                     // 00 · Prepared for Dayanara · Phoenix, Arizona
                 </p>
-<h1 class="font-headline text-5xl md:text-[80px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-8 max-w-4xl mx-auto">
+<h1 class="font-headline text-[40px] sm:text-5xl md:text-[80px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-8 max-w-4xl mx-auto">
                     The digital <span class="text-gradient">backbone</span> of Phoenix heavy freight.
                 </h1>
 <p class="font-body text-xl text-text-secondary mb-12 max-w-2xl mx-auto opacity-60">
@@ -272,7 +285,7 @@
 <p class="font-label text-text-muted text-xs uppercase tracking-[0.12em] mb-4">
                 // 01 · Executive Context
             </p>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-16 max-w-3xl">
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-16 max-w-3xl">
                 Phoenix is building at a scale the paper-ticket era cannot serve.
             </h2>
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -315,7 +328,7 @@
 <p class="font-label text-text-muted text-xs uppercase tracking-[0.12em] mb-4">
                 // 02 · What Breaks Today
             </p>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-16 max-w-3xl">
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-16 max-w-3xl">
                 Three points of friction quietly bleeding margin.
             </h2>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -365,7 +378,7 @@
 <p class="font-label text-text-muted text-xs uppercase tracking-[0.12em] mb-4">
                 // 03 · A Three-Surface Platform
             </p>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-16 max-w-3xl">
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold mb-16 max-w-3xl">
                 One system. Three interfaces.
             </h2>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -453,7 +466,7 @@
 <section id="compliance" class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
 <div class="space-y-6 max-w-3xl">
 <span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 04 · Architecture of Trust</span>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Every truck is verified before it ever moves.</h2>
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Every truck is verified before it ever moves.</h2>
 <p class="text-text-secondary text-[17px] leading-[1.65]">Carrier onboarding is the chokepoint that breaks when volume scales. The proposed platform runs a compliance engine that verifies documents, scores carriers, and assigns loads without human intervention — so onboarding a new fleet takes hours, not weeks.</p>
 </div>
 <!-- Desktop timeline -->
@@ -543,7 +556,7 @@
 <section class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
 <div class="space-y-6 max-w-3xl">
 <span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 05 · Geofencing That Pays For Itself</span>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">GPS is the foundation of automated compliance and instant POD.</h2>
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">GPS is the foundation of automated compliance and instant POD.</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
 <div class="md:col-span-7 space-y-10">
@@ -581,7 +594,7 @@ Load Cycle Analytics
 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] shadow-glow z-0 pointer-events-none"></div>
 <div class="space-y-6 max-w-3xl relative z-10">
 <span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 06 · Fast Pay Differentiator</span>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Speed of payment is the new retention tool.</h2>
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Speed of payment is the new retention tool.</h2>
 <p class="text-text-secondary text-[17px] leading-[1.65]">In a labor-scarce market, drivers go where they get paid fastest. Stripe Connect enables same-day and next-day settlement — turning the financial operation into a recruiting asset for carriers.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
@@ -626,7 +639,7 @@ Load Cycle Analytics
 <section class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
 <div class="space-y-6 max-w-3xl">
 <span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 07 · Market & Comparables</span>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">What Uber could not do, and who already did it.</h2>
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">What Uber could not do, and who already did it.</h2>
 <p class="text-text-secondary text-[17px] leading-[1.65]">The Uber model broke when applied naively to regulated freight — the original assumption was that drivers are gig workers, and they are not. Heavy haul carriers carry CDLs, $1M CSL insurance, ADOT filings, and DOT compliance obligations. What works is a marketplace with a verification layer built into the platform. The thesis has been validated by regional players; none of them operate in Phoenix.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -665,7 +678,7 @@ Load Cycle Analytics
 <section id="roadmap" class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
 <div class="space-y-6 max-w-3xl">
 <span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 08 · Roadmap</span>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Three months to a live, production-grade platform.</h2>
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Three months to a live, production-grade platform.</h2>
 <p class="text-text-secondary text-[17px] leading-[1.65]">The delivery window is three months end-to-end — from kickoff to the first carrier getting paid through the platform in production. Kapitec's AI-accelerated engineering compresses the build itself; the remaining time goes to client-side onboarding, Arizona regulatory validation, pilot carrier recruitment, and the calm operational ramp that a freight network needs. Nothing is rushed. Nothing is padded.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -720,7 +733,7 @@ Load Cycle Analytics
 <section id="credentials" class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
 <div class="space-y-6 max-w-3xl">
 <span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 09 · Why Kapitec</span>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Twenty years building software that stays running.</h2>
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Twenty years building software that stays running.</h2>
 <p class="text-text-secondary text-[17px] leading-[1.65]">Kapitec Soluciones has been shipping production systems since 2006. Our work sits behind operations on both sides of the border — heavy construction supply chains, multi-entity contractors, dispatch floors in Mexico and the United States. We are a boutique firm by design: small team, long tenures, clients measured in decades, not quarters.</p>
 <p class="text-text-secondary text-[17px] leading-[1.65]">Most of what we build sits inside our clients' operations, not in their marketing — the systems run every day but rarely carry a logo. The construction work specifically covers aggregate transport back-offices, supplier reconciliation, multi-site dispatch, and compliance workflows tuned to each country's regulatory environment (CFDI + SAT in Mexico, FMCSA + state DOTs in the US). We have built every primitive this proposal needs before — just never assembled under one Phoenix-focused platform.</p>
 </div>
@@ -757,7 +770,7 @@ Load Cycle Analytics
 <section class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5 space-y-16">
 <div class="space-y-6 max-w-3xl">
 <span class="font-label text-xs uppercase tracking-[0.12em] text-text-muted block">// 10 · Conclusion</span>
-<h2 class="font-headline text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Not an app. Infrastructure.</h2>
+<h2 class="font-headline text-3xl sm:text-4xl md:text-[48px] leading-[1.1] tracking-[-0.02em] font-extrabold">Not an app. Infrastructure.</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl">
 <p class="text-text-secondary text-[17px] leading-[1.65]">Phoenix represents a structural — not incremental — opportunity. The scale of the current build (TSMC Fab 1 and 2, Intel Ocotillo, I-10 widening, SR-202 extensions), the regulatory tailwind (ADOT Form E, FMCSA ELD), and the absence of a dominant digital incumbent align maybe once a decade. Whoever builds the trusted infrastructure for aggregate transport in Phoenix defines how that market operates for the next fifteen years.</p>
@@ -772,7 +785,7 @@ Load Cycle Analytics
 <section id="contact" class="py-32 px-6 md:px-24 max-w-[1200px] mx-auto border-t border-white/5">
 <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-start">
 <div class="md:col-span-3 space-y-6">
-<h2 class="font-headline text-3xl md:text-[44px] leading-[1.1] tracking-[-0.02em] font-extrabold">Walk me through the numbers for Dayanara's operation.</h2>
+<h2 class="font-headline text-[26px] sm:text-3xl md:text-[44px] leading-[1.1] tracking-[-0.02em] font-extrabold">Walk me through the numbers for Dayanara's operation.</h2>
 <p class="text-text-secondary text-[17px] leading-[1.65]">A 30-minute working session. I'll bring a live walkthrough of the platform mapped to real Phoenix routes, run the compliance engine against a sample Arizona CDL, and sketch the day-one integration plan. No slides — only real screens.</p>
 <div class="pt-4 space-y-2 text-sm text-text-muted font-label tracking-wider uppercase">
 <div>Javier Enríquez · Kapitec Soluciones</div>
