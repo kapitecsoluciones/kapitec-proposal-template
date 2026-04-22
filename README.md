@@ -20,16 +20,20 @@ Both share the same Stitch (claude.ai/design) design system asset — see `STITC
 5. **Kapitec signature gradient** `linear-gradient(135deg, #2367FB 0%, #2DD2A1 100%)` used sparingly — hero one-word accent, primary CTA, roadmap phase numbers, credentials "Live" links. Nowhere else.
 6. **Industry accent** swappable per client: amber `#F59E0B` for PHX; green for logistics; navy+amber for real estate. Used only on industry badge, problem-card left borders, one high-impact stat, and roadmap duration pills.
 7. **Client name in hero eyebrow** — always `// 00 · Prepared for {CLIENT_NAME} · {CLIENT_LOCATION}`.
-8. **Credentials section** always included. Default tiles: R136 Protech · SafeTravel Mexico · Emmental Group · SmartClose OS · Kapi POS.
+8. **Credentials section is confidentiality-first.** Never list specific client projects by name. Default format: narrative paragraphs on 20-year track record + 3 stat cards (years operating, geographic reach, stack ownership) + a small row of public-facing Kapitec URLs (kapi.mx · kapitec.pro · arivey.com · loveaxel.com · aili.mx). Clients sometimes ask for credentials — reply verbally, not in the document.
 9. **Footer** is Kapitec's own — no "Powered by X" auto-credits.
 10. **Typography**: Plus Jakarta Sans 800 (H1 80px, H2 48px, -0.02em tracking), Inter 400/500 (body 17px, 1.65 line-height), JetBrains Mono 700 (stats, durations, weights).
+11. **Logo**: real Kapi wordmark SVG (`template/assets/kapi-logo.svg`) in nav + footer — never render `kapi.` as text.
+12. **Primary CTA = WhatsApp to Javi** (+52 662 105 0329). Hero uses the WhatsApp-green brand glyph, a gradient-filled button, and the direct wa.me link with a pre-filled message. A green WhatsApp floating-action-button sits bottom-right on every screen so the CTA is reachable from any scroll position.
 
 ## Structure of this repo
 
 ```
 kapitec-proposal-template/
 ├── template/
-│   └── index.html          ← the skeleton with __PLACEHOLDER__ markers
+│   ├── index.html          ← the skeleton with __PLACEHOLDER__ markers
+│   └── assets/
+│       └── kapi-logo.svg   ← official Kapi wordmark (from /workspace/brand/)
 ├── examples/
 │   └── phx-dayanara/
 │       ├── index.html      ← live reference (kapitec.pro/phx/)
